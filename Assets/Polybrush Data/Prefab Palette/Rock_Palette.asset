@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc38003c0e0db6641a4762d4f392de52, type: 3}
+  m_Name: Rock_Palette
+  m_EditorClassIdentifier: 
+  prefabs:
+  - gameObject: {fileID: 4191073764931746302, guid: 155cd23fc363c9644bb4e01bb165b496,
+      type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 360, y: 360, z: 360}
+      m_ScaleRangeMin: {x: 0.5, y: 0.5, z: 0.5}
+      m_ScaleRangeMax: {x: 5, y: 5, z: 5}
+      m_UniformScale: {x: 0.3, y: 5}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 1
+      m_YScaleBool: 1
+      m_ZScaleBool: 1
+    name: Rock_01
+  - gameObject: {fileID: 3901301075788390100, guid: 3b03fad540089dd459039727cf8f11b8,
+      type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 360, y: 360, z: 360}
+      m_ScaleRangeMin: {x: 0.5, y: 0.5, z: 0.5}
+      m_ScaleRangeMax: {x: 5, y: 5, z: 5}
+      m_UniformScale: {x: 0.3, y: 5}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 1
+      m_YScaleBool: 1
+      m_ZScaleBool: 1
+    name: Rock_02
+  - gameObject: {fileID: 7420415586996953467, guid: a81246915d412624088eaeb1b8b50575,
+      type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 360, y: 360, z: 360}
+      m_ScaleRangeMin: {x: 0.5, y: 0.5, z: 0.5}
+      m_ScaleRangeMax: {x: 5, y: 5, z: 5}
+      m_UniformScale: {x: 0.3, y: 5}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 1
+      m_YScaleBool: 1
+      m_ZScaleBool: 1
+    name: Rock_04
+  - gameObject: {fileID: 3731862452135724004, guid: f9ad968ad7ea1c94c8495c6030ba545f,
+      type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 360, y: 360, z: 360}
+      m_ScaleRangeMin: {x: 0.5, y: 0.5, z: 0.5}
+      m_ScaleRangeMax: {x: 5, y: 5, z: 5}
+      m_UniformScale: {x: 0.3, y: 5}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 1
+      m_YScaleBool: 1
+      m_ZScaleBool: 1
+    name: Rock_03
+  - gameObject: {fileID: 4750064729234118700, guid: bbffbd2e4f9ac4949bfe47e1ac3d536a,
+      type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 360, y: 360, z: 360}
+      m_ScaleRangeMin: {x: 0.5, y: 0.5, z: 0.5}
+      m_ScaleRangeMax: {x: 5, y: 5, z: 5}
+      m_UniformScale: {x: 0.3, y: 5}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 0
+      m_YScaleBool: 1
+      m_ZScaleBool: 1
+    name: Rock_05
