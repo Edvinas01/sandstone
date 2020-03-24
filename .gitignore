@@ -68,3 +68,7 @@ crashlytics-build.properties
 # Blender
 *.blend1
 
+# Scene lightning data
+Assets/Scenes/*/*
+Assets/Scenes/*.meta
+!Assets/Scenes/*.unity.meta
