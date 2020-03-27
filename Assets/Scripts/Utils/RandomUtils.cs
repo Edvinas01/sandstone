@@ -8,9 +8,9 @@
         private static readonly Random Random =
             new Random(Guid.NewGuid().GetHashCode());
 
-        public static float Range(float min, float max)
+        public static float GetRandom(float min, float max)
         {
-            return (float) Random.NextDouble() * (max - min + 1);
+            return (float) Random.NextDouble() * (max - min) + min;
         }
 
         public static T GetRandom<T>(this IList<T> items)

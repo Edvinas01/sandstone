@@ -59,7 +59,7 @@
         {
             if (isRandomOffset)
             {
-                return RandomUtils.Range(-randomOffset, randomOffset);
+                return RandomUtils.GetRandom(-randomOffset, randomOffset);
             }
 
             return 0;
