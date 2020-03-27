@@ -1,13 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using Utils;
 
 public class Activator : MonoBehaviour
 {
-    [Tooltip("Current activator state")]
-    public bool isActivated;
+    public enum Mode
+    {
+        None,
+        Activate,
+        Deactivate
+    }
 
-    [Tooltip("Should this activator act as a toggle")]
-    public bool isToggle;
+    [Tooltip("Mode to start the activator with")]
+    public Mode mode = Mode.None;
+
+    [ReadOnly]
+    [Tooltip("Current state of the activator")]
+    public bool isActive;
 
     [Tooltip("Event fired when the activator is activated")]
     public UnityEvent onActivated;
@@ -15,32 +24,43 @@ public class Activator : MonoBehaviour
     [Tooltip("Event fired when the activator is deactivated")]
     public UnityEvent onDeactivated;
 
+    private bool isModeHandled;
+
+    public void Update()
+    {
+        if (isModeHandled)
+        {
+            return;
+        }
+
+        HandleMode();
+        isModeHandled = true;
+    }
+
     public void Activate()
     {
         onActivated.Invoke();
-        isActivated = true;
+        isActive = true;
     }
 
     public void Deactivate()
     {
         onDeactivated.Invoke();
-        isActivated = false;
+        isActive = false;
     }
 
-    public void Toggle()
+    private void HandleMode()
     {
-        var newIsActivated = !isActivated;
-
-        if (newIsActivated)
+        switch (mode)
         {
-            Activate();
+            case Mode.None:
+                break;
+            case Mode.Activate:
+                Activate();
+                break;
+            case Mode.Deactivate:
+                Deactivate();
+                break;
         }
-        else
-        {
-            Deactivate();
-        }
-
-        // State is set last in-case events error.
-        isActivated = newIsActivated;
     }
 }

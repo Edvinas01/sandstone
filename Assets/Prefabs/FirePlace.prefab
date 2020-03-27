@@ -9785,6 +9785,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8320241197721948282}
+  - component: {fileID: 2256978783866213765}
+  - component: {fileID: 3817934919508382673}
+  - component: {fileID: 1903163880631503753}
   m_Layer: 0
   m_Name: FirePlace
   m_TagString: Untagged
@@ -9811,6 +9814,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2256978783866213765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8320241197721948283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a177d3bd316be4c96e4b307280e55d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 1
+  isActive: 0
+  onActivated:
+    m_PersistentCalls:
+      m_Calls: []
+  onDeactivated:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3817934919508382673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8320241197721948283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a185743bd04d0459c56fe0d9979e00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &1903163880631503753
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8320241197721948283}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &8320241195925090311
 PrefabInstance:
   m_ObjectHideFlags: 0
