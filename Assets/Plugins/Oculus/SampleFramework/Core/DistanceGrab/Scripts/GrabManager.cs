@@ -49,7 +49,10 @@ namespace OculusSampleFramework
     {
         Collider m_grabVolume;
 
+        [ColorUsage(false, true)]
         public Color OutlineColorInRange;
+        
+        [ColorUsage(false, true)]
         public Color OutlineColorHighlighted;
 
         void OnTriggerEnter(Collider otherCollider)

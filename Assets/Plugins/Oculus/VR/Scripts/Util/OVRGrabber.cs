@@ -402,7 +402,7 @@ public class OVRGrabber : MonoBehaviour
 	{
 		if (m_player != null)
 		{
-			Collider[] playerColliders = m_player.GetComponentsInChildren<Collider>();
+			Collider[] playerColliders = m_player.GetComponents<Collider>();
 			foreach (Collider pc in playerColliders)
 			{
 				Collider[] colliders = grabbable.GetComponentsInChildren<Collider>();

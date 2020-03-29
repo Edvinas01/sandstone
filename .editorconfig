@@ -8,3 +8,7 @@ indent_style = space
 end_of_line = lf
 indent_size = 4
 charset = utf-8
+
+[/Assets/Plugins/**]
+trim_trailing_whitespace = false
+max_line_length = off
