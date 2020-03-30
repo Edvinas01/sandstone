@@ -18,10 +18,10 @@ namespace OculusSampleFramework
     public class DistanceGrabbable : OVRGrabbable
     {
         public string m_materialColorField;
+        public Renderer m_renderer;
 
         GrabbableCrosshair m_crosshair;
         GrabManager m_crosshairManager;
-        Renderer m_renderer;
         MaterialPropertyBlock m_mpb;
 
         private Color initialColor;
@@ -52,7 +52,7 @@ namespace OculusSampleFramework
         {
             base.Start();
             m_crosshair = gameObject.GetComponentInChildren<GrabbableCrosshair>();
-            m_renderer = gameObject.GetComponent<Renderer>();
+            m_renderer = GetRenderer();
             m_crosshairManager = FindObjectOfType<GrabManager>();
             m_mpb = new MaterialPropertyBlock();
             RefreshCrosshair();
@@ -88,6 +88,11 @@ namespace OculusSampleFramework
         {
             m_mpb.SetColor(m_materialColorField, initialColor);
             m_renderer.SetPropertyBlock(m_mpb);
+        }
+        
+        private Renderer GetRenderer()
+        {
+            return m_renderer != null ? m_renderer : GetComponent<Renderer>();
         }
     }
 }
