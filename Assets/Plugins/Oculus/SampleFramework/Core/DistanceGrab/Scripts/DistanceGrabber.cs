@@ -11,6 +11,7 @@ language governing permissions and limitations under the license.
 
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 #if UNITY_EDITOR
 using UnityEngine.SceneManagement;
 #endif
@@ -78,6 +79,8 @@ namespace OculusSampleFramework
         // Tracked separately from m_target, because we support child colliders of a DistanceGrabbable.
         protected Collider m_targetCollider;
 
+        public UnityEvent onMove;
+        
         protected override void Start()
         {
             base.Start();
@@ -143,6 +146,10 @@ namespace OculusSampleFramework
                 if (closestGrabbable.isGrabbed)
                 {
                     ((DistanceGrabber)closestGrabbable.grabbedBy).OffhandGrabbed(closestGrabbable);
+                }
+                else
+                {
+                    onMove.Invoke();
                 }
 
                 m_grabbedObj = closestGrabbable;

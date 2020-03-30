@@ -1,10 +1,9 @@
 ﻿using Util;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Impact
 {
-    using System.Collections.Generic;
-    using UnityEngine;
-
     [RequireComponent(typeof(AudioSource))]
     public class ImpactAudioSource : MonoBehaviour
     {

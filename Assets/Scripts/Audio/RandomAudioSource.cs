@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using Util;
 
 namespace Audio
@@ -18,11 +19,19 @@ namespace Audio
         [Tooltip("Max pitch of randomized clips")]
         public float maxPitch = 1f;
 
+        [Tooltip("Clips to randomize")]
+        public List<AudioClip> clips;
+
         private new AudioSource audio;
 
         public void Start()
         {
             audio = GetComponent<AudioSource>();
+        }
+
+        public void Play()
+        {
+            Play(clips.GetRandom());
         }
 
         public void Play(AudioClip clip)

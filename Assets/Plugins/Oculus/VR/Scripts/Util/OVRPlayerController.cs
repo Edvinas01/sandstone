@@ -132,6 +132,9 @@ public class OVRPlayerController : MonoBehaviour
 	/// </summary>
 	public bool RotationEitherThumbstick = false;
 
+    [Tooltip("Is sprinting enabled")]
+    public bool enableSprint;
+
 	protected CharacterController Controller = null;
 	protected OVRCameraRig CameraRig = null;
 
@@ -355,7 +358,7 @@ public class OVRPlayerController : MonoBehaviour
 			float moveInfluence = Acceleration * 0.1f * MoveScale * MoveScaleMultiplier;
 
 			// Run!
-			if (dpad_move || Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+			if (enableSprint && (dpad_move || Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
 				moveInfluence *= 2.0f;
 
 			Quaternion ort = transform.rotation;
@@ -377,7 +380,10 @@ public class OVRPlayerController : MonoBehaviour
 			moveInfluence = Acceleration * 0.1f * MoveScale * MoveScaleMultiplier;
 
 #if !UNITY_ANDROID // LeftTrigger not avail on Android game pad
-			moveInfluence *= 1.0f + OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
+            if (enableSprint)
+            {
+                moveInfluence *= 1.0f + OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
+            }
 #endif
 
 			Vector2 primaryAxis = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);

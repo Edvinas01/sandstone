@@ -1,9 +1,9 @@
-﻿namespace Impact
-{
-    using System;
-    using UnityEngine;
-    using UnityEngine.Events;
+﻿using System;
+using UnityEngine;
+using UnityEngine.Events;
 
+namespace Impact
+{
     [RequireComponent(typeof(Rigidbody))]
     public class ImpactDetector : MonoBehaviour
     {

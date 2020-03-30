@@ -24757,6 +24757,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainLight
       objectReference: {fileID: 0}
+    - target: {fileID: 2871172632062492900, guid: 0a400da9b450d8b499edadae8ccc405d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2871172632062492902, guid: 0a400da9b450d8b499edadae8ccc405d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48946,7 +48951,7 @@ PrefabInstance:
     - target: {fileID: 6963908179788400977, guid: e0eaf8218a1ae7741af685db4c34d37d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.526
+      value: 8.493
       objectReference: {fileID: 0}
     - target: {fileID: 6963908179788400977, guid: e0eaf8218a1ae7741af685db4c34d37d,
         type: 3}
