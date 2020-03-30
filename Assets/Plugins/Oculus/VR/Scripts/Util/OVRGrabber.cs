@@ -87,6 +87,11 @@ public class OVRGrabber : MonoBehaviour
         get { return m_grabbedObj; }
     }
 
+    public OVRInput.Controller Controller
+    {
+        get { return m_controller; }
+    }
+
 	public void ForceRelease(OVRGrabbable grabbable)
     {
         bool canRelease = (

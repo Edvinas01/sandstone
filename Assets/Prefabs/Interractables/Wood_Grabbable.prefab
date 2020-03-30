@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4435223314159477218}
   - component: {fileID: 4435223314159477228}
   - component: {fileID: 4435223314159477219}
+  - component: {fileID: 4833190356889497883}
   m_Layer: 0
   m_Name: Wood_Grabbable
   m_TagString: Untagged
@@ -190,9 +191,29 @@ MonoBehaviour:
   maxVolume: 0.3
   minPitch: 0.5
   maxPitch: 0.8
+  isRandomOffset: 1
   randomOffset: 1
   clips:
   - {fileID: 8300000, guid: 3005454f94754b6468eea56681cb0312, type: 3}
   - {fileID: 8300000, guid: 269f37d8309453d45a4559010998ee9d, type: 3}
   - {fileID: 8300000, guid: 3d5a2ef05fc7e7d408ebdd0f8eed1940, type: 3}
   - {fileID: 8300000, guid: f53f35c905f447a498d8f7435bdf851e, type: 3}
+--- !u!114 &4833190356889497883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4435223314159477223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints: []
+  m_materialColorField: Outline_Color
+  m_renderer: {fileID: 0}

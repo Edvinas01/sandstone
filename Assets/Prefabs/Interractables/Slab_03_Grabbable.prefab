@@ -89,6 +89,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f77c760ce2347d244a0b2be4913c0cd5, type: 3}
+--- !u!23 &2567103691774728729 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5423534584541090921, guid: f77c760ce2347d244a0b2be4913c0cd5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7558285701608738416}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &3209521815552656103 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 4931142365653994647, guid: f77c760ce2347d244a0b2be4913c0cd5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7558285701608738416}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7558285701980238760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -161,6 +173,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3077697945769913809, guid: 9cf4f381aba11f24dbfb802d70b31ba3,
+        type: 3}
+      propertyPath: m_grabPoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077697945769913809, guid: 9cf4f381aba11f24dbfb802d70b31ba3,
+        type: 3}
+      propertyPath: m_grabPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 3209521815552656103}
+    - target: {fileID: 3077697945769913809, guid: 9cf4f381aba11f24dbfb802d70b31ba3,
+        type: 3}
+      propertyPath: m_renderer
+      value: 
+      objectReference: {fileID: 2567103691774728729}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cf4f381aba11f24dbfb802d70b31ba3, type: 3}
 --- !u!4 &8450823938785271306 stripped

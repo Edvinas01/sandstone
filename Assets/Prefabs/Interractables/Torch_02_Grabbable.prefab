@@ -1,12 +1,12 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &7912884867440675942
+--- !u!114 &2245909757760096421
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5363440934241450671}
+  m_GameObject: {fileID: 4097506874494301310}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4a177d3bd316be4c96e4b307280e55d, type: 3}
@@ -49,6 +49,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4097506874494301304}
     m_Modifications:
+    - target: {fileID: 1154385537808423884, guid: c24366b5328a855449c72c4df34f3e0f,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1192928074404171620, guid: c24366b5328a855449c72c4df34f3e0f,
         type: 3}
       propertyPath: m_Name
@@ -58,6 +63,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801402824981525372, guid: c24366b5328a855449c72c4df34f3e0f,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4816057871316491676, guid: c24366b5328a855449c72c4df34f3e0f,
         type: 3}
@@ -197,12 +207,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bff97e681f3142d42a0644befb79eb2f, type: 3}
---- !u!1 &5363440934241450671 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5490330205531962939, guid: bff97e681f3142d42a0644befb79eb2f,
-    type: 3}
-  m_PrefabInstance: {fileID: 459181513290040468}
-  m_PrefabAsset: {fileID: 0}
 --- !u!23 &5931824620231593587 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6056572077262392039, guid: bff97e681f3142d42a0644befb79eb2f,
@@ -299,6 +303,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 776a00e7f25da8148813fa97816ab917, type: 3}
+--- !u!1 &4097506874494301310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4634297926956274859, guid: 776a00e7f25da8148813fa97816ab917,
+    type: 3}
+  m_PrefabInstance: {fileID: 8686618651290951893}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4097506874494301304 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4634297926956274861, guid: 776a00e7f25da8148813fa97816ab917,

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 0
+  isActive: 0
   onActivated:
     m_PersistentCalls:
       m_Calls:
@@ -48,6 +49,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 554401632342008867}
     m_Modifications:
+    - target: {fileID: 1154385537808423884, guid: c24366b5328a855449c72c4df34f3e0f,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1192928074404171620, guid: c24366b5328a855449c72c4df34f3e0f,
         type: 3}
       propertyPath: m_Name
@@ -82,6 +88,11 @@ PrefabInstance:
         type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
       value: 0.33538818
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801402824981525372, guid: c24366b5328a855449c72c4df34f3e0f,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4816057871316491676, guid: c24366b5328a855449c72c4df34f3e0f,
         type: 3}
@@ -237,6 +248,18 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 31344e8b7f69b7742b23bfc8050fd4f5, type: 3}
+--- !u!23 &8072638513093589220 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4894403010354086178, guid: 31344e8b7f69b7742b23bfc8050fd4f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 3741273511672854982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &4787626270039330253 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 8186062899099431947, guid: 31344e8b7f69b7742b23bfc8050fd4f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 3741273511672854982}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5319297553438350690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -244,6 +267,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 857581832778514026, guid: a30f913a9e40f7b409f8002da3495ab9,
+        type: 3}
+      propertyPath: m_grabPoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 857581832778514026, guid: a30f913a9e40f7b409f8002da3495ab9,
+        type: 3}
+      propertyPath: m_renderer
+      value: 
+      objectReference: {fileID: 8072638513093589220}
+    - target: {fileID: 857581832778514026, guid: a30f913a9e40f7b409f8002da3495ab9,
+        type: 3}
+      propertyPath: m_grabPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 4787626270039330253}
     - target: {fileID: 5647603722267162945, guid: a30f913a9e40f7b409f8002da3495ab9,
         type: 3}
       propertyPath: m_LocalPosition.x

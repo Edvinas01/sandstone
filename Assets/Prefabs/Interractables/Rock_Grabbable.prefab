@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2135611490740989345}
   - component: {fileID: 2135611490740989359}
   - component: {fileID: 2135611490740989344}
+  - component: {fileID: 3077697945769913809}
   m_Layer: 0
   m_Name: Rock_Grabbable
   m_TagString: Untagged
@@ -190,9 +191,29 @@ MonoBehaviour:
   maxVolume: 1
   minPitch: 0.3
   maxPitch: 0.8
+  isRandomOffset: 1
   randomOffset: 1
   clips:
   - {fileID: 8300000, guid: 951a4a508b4823e49a99dbc4766f88af, type: 3}
   - {fileID: 8300000, guid: 640bd40fbcf00a3469d4f49dca59cf70, type: 3}
   - {fileID: 8300000, guid: 4062ac85b8613624ea1e336b5024af33, type: 3}
   - {fileID: 8300000, guid: 68224e428a0704f4a874c9885920f0db, type: 3}
+--- !u!114 &3077697945769913809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135611490740989348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints: []
+  m_materialColorField: Outline_Color
+  m_renderer: {fileID: 0}

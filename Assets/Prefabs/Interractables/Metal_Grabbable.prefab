@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5647603722267162946}
   - component: {fileID: 5647603722267162956}
   - component: {fileID: 5647603722267162947}
+  - component: {fileID: 857581832778514026}
   m_Layer: 0
   m_Name: Metal_Grabbable
   m_TagString: Untagged
@@ -190,8 +191,28 @@ MonoBehaviour:
   maxVolume: 0.6
   minPitch: 0.4
   maxPitch: 0.8
+  isRandomOffset: 1
   randomOffset: 1
   clips:
   - {fileID: 8300000, guid: d847d30778997bd4c95ffd1246190de5, type: 3}
   - {fileID: 8300000, guid: 1f961931e44ea1c49ad3d4d533df29ab, type: 3}
   - {fileID: 8300000, guid: 6978e5866697c4748a305f426849d8e3, type: 3}
+--- !u!114 &857581832778514026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5647603722267162951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints: []
+  m_materialColorField: Outline_Color
+  m_renderer: {fileID: 0}

@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &783830575579260967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5479493683054956542}
+  - component: {fileID: 3056786932078914723}
+  m_Layer: 0
+  m_Name: GlassColorSwitcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5479493683054956542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783830575579260967}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8928945642150579831}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3056786932078914723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783830575579260967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4e3b04c8be2594bb2369a925b7311a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 7743537428840543094}
+  material: {fileID: 2100000, guid: b8e50bf9b61565249b51d1ad4c46abe2, type: 2}
+  color: {r: 0, g: 0, b: 0, a: 0}
+  colorField: _EmissionColor
 --- !u!1 &1315745590631649220
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +191,22 @@ MonoBehaviour:
   maxVolume: 1
   minPitch: 0.8
   maxPitch: 1
+--- !u!114 &918858122291125187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928945642150579825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb12c067443829419714db8132ad8dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabbable: {fileID: 1247152520434891115}
+  activator: {fileID: 4055102639542966069}
+  button: 8192
+  toggle: 1
 --- !u!114 &4055102639542966069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a177d3bd316be4c96e4b307280e55d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isToggle: 1
+  mode: 2
+  isActive: 0
   onActivated:
     m_PersistentCalls:
       m_Calls:
@@ -183,6 +247,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 5333175022674595496}
+        m_MethodName: SwitchColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 3056786932078914723}
+        m_MethodName: ResetColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onDeactivated:
     m_PersistentCalls:
       m_Calls:
@@ -204,6 +290,28 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 8300000, guid: dcef8bea4fc68114d9fcd08076ba8051,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5333175022674595496}
+        m_MethodName: ResetColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3056786932078914723}
+        m_MethodName: SwitchColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -301,6 +409,53 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &5942655219317488044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2959975954185896045}
+  - component: {fileID: 5333175022674595496}
+  m_Layer: 0
+  m_Name: ButtonColorSwitcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2959975954185896045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5942655219317488044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8928945642150579831}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5333175022674595496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5942655219317488044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4e3b04c8be2594bb2369a925b7311a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 7743537428840543094}
+  material: {fileID: 2100000, guid: 80eb48bdd1764634594a455e3fb65571, type: 2}
+  color: {r: 0, g: 0, b: 0, a: 0}
+  colorField: _EmissionColor
 --- !u!1001 &3172359724854142158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -308,6 +463,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4415984771435257253, guid: 8e06bbca54e53d34a8f816c38626a467,
+        type: 3}
+      propertyPath: m_grabPoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415984771435257253, guid: 8e06bbca54e53d34a8f816c38626a467,
+        type: 3}
+      propertyPath: m_renderer
+      value: 
+      objectReference: {fileID: 7743537428840543094}
+    - target: {fileID: 4415984771435257253, guid: 8e06bbca54e53d34a8f816c38626a467,
+        type: 3}
+      propertyPath: m_grabPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 30304024060632766}
     - target: {fileID: 6336424615225043641, guid: 8e06bbca54e53d34a8f816c38626a467,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -382,6 +552,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3172359724854142158}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1247152520434891115 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4415984771435257253, guid: 8e06bbca54e53d34a8f816c38626a467,
+    type: 3}
+  m_PrefabInstance: {fileID: 3172359724854142158}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928945642150579825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3488108172907800385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -449,5 +631,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8464834842888098552, guid: 2ed8a13753eaf14438ff0f2c7dbe3ab1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8464834842888098552, guid: 2ed8a13753eaf14438ff0f2c7dbe3ab1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8464834842888098552, guid: 2ed8a13753eaf14438ff0f2c7dbe3ab1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ed8a13753eaf14438ff0f2c7dbe3ab1, type: 3}
+--- !u!23 &7743537428840543094 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6565876229838541879, guid: 2ed8a13753eaf14438ff0f2c7dbe3ab1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3488108172907800385}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &30304024060632766 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 3459774683235777023, guid: 2ed8a13753eaf14438ff0f2c7dbe3ab1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3488108172907800385}
+  m_PrefabAsset: {fileID: 0}

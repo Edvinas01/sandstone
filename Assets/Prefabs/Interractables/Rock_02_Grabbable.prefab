@@ -67,6 +67,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_02_Grabbable
       objectReference: {fileID: 0}
+    - target: {fileID: 3077697945769913809, guid: 9cf4f381aba11f24dbfb802d70b31ba3,
+        type: 3}
+      propertyPath: m_grabPoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077697945769913809, guid: 9cf4f381aba11f24dbfb802d70b31ba3,
+        type: 3}
+      propertyPath: m_renderer
+      value: 
+      objectReference: {fileID: 6553686752146862723}
+    - target: {fileID: 3077697945769913809, guid: 9cf4f381aba11f24dbfb802d70b31ba3,
+        type: 3}
+      propertyPath: m_grabPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 3597923627824635732}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cf4f381aba11f24dbfb802d70b31ba3, type: 3}
 --- !u!4 &7586465928721332509 stripped
@@ -164,3 +179,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b03fad540089dd459039727cf8f11b8, type: 3}
+--- !u!23 &6553686752146862723 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3321653919819852296, guid: 3b03fad540089dd459039727cf8f11b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8425036181384779915}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &3597923627824635732 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 4973620777832679391, guid: 3b03fad540089dd459039727cf8f11b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8425036181384779915}
+  m_PrefabAsset: {fileID: 0}

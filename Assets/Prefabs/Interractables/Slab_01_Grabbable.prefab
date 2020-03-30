@@ -89,6 +89,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7723a9ed03d1b46933bbe1609470ee, type: 3}
+--- !u!23 &6284025702245653227 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2931268240523405474, guid: 7c7723a9ed03d1b46933bbe1609470ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 9194288836871385673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &4334823553768339260 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 4877627051681858933, guid: 7c7723a9ed03d1b46933bbe1609470ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 9194288836871385673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9194288837276218954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -156,6 +168,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slab_01_Grabbable
       objectReference: {fileID: 0}
+    - target: {fileID: 3077697945769913809, guid: 9cf4f381aba11f24dbfb802d70b31ba3,
+        type: 3}
+      propertyPath: m_grabPoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077697945769913809, guid: 9cf4f381aba11f24dbfb802d70b31ba3,
+        type: 3}
+      propertyPath: m_renderer
+      value: 
+      objectReference: {fileID: 6284025702245653227}
+    - target: {fileID: 3077697945769913809, guid: 9cf4f381aba11f24dbfb802d70b31ba3,
+        type: 3}
+      propertyPath: m_grabPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 4334823553768339260}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cf4f381aba11f24dbfb802d70b31ba3, type: 3}
 --- !u!4 &7078422411370814440 stripped
