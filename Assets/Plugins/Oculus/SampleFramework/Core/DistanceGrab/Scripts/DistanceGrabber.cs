@@ -90,12 +90,6 @@ namespace OculusSampleFramework
             SphereCollider sc = m_player.GetComponentInChildren<SphereCollider>();
             m_maxGrabDistance = sc.radius + 3.0f;
 
-            if(m_parentHeldObject == true)
-            {
-                Debug.LogError("m_parentHeldObject incompatible with DistanceGrabber. Setting to false.");
-                m_parentHeldObject = false;
-            }
-
             DistanceGrabber[] grabbers = FindObjectsOfType<DistanceGrabber>();
             for (int i = 0; i < grabbers.Length; ++i)
             {
@@ -155,7 +149,7 @@ namespace OculusSampleFramework
                 m_grabbedObj.GrabBegin(this, closestGrabbableCollider);
                 SetPlayerIgnoreCollision(m_grabbedObj.gameObject, true);
 
-                m_movingObjectToHand = true;
+                SetMovingObjectToHand(true);
                 m_lastPos = transform.position;
                 m_lastRot = transform.rotation;
 
@@ -164,7 +158,7 @@ namespace OculusSampleFramework
                 if(!m_grabbedObj.snapPosition && !m_grabbedObj.snapOrientation && m_noSnapThreshhold > 0.0f && (closestPointOnBounds - m_gripTransform.position).magnitude < m_noSnapThreshhold)
                 {
                     Vector3 relPos = m_grabbedObj.transform.position - transform.position;
-                    m_movingObjectToHand = false;
+                    SetMovingObjectToHand(false);
                     relPos = Quaternion.Inverse(transform.rotation) * relPos;
                     m_grabbedObjectPosOff = relPos;
                     Quaternion relOri = Quaternion.Inverse(transform.rotation) * m_grabbedObj.transform.rotation;
@@ -191,6 +185,11 @@ namespace OculusSampleFramework
             }
         }
 
+        protected override bool IsMoveGrabbedObject()
+        {
+            return m_grabbedObj != null && m_grabbedObj.transform.parent != transform;
+        }
+
         protected override void MoveGrabbedObject(Vector3 pos, Quaternion rot, bool forceTeleport = false)
         {
             if (m_grabbedObj == null)
@@ -208,7 +207,7 @@ namespace OculusSampleFramework
                 Vector3 dir = grabbablePosition - m_grabbedObj.transform.position;
                 if(travel * travel * 1.1f > dir.sqrMagnitude)
                 {
-                    m_movingObjectToHand = false;
+                    SetMovingObjectToHand(false);
                 }
                 else
                 {
@@ -362,5 +361,15 @@ namespace OculusSampleFramework
         {
             base.OffhandGrabbed(grabbable);
         }
+
+      private void SetMovingObjectToHand(bool moving)
+      {
+          m_movingObjectToHand = moving;
+
+          if (!m_movingObjectToHand && m_parentTransform && IsMoveGrabbedObject())
+          {
+              m_grabbedObj.transform.parent = transform;
+          }
+      }
     }
 }

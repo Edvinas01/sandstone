@@ -160,7 +160,7 @@ public class OVRGrabber : MonoBehaviour
             GetComponent<Rigidbody>().MoveRotation(destRot);
         }
 
-        if (!m_parentHeldObject)
+        if (IsMoveGrabbedObject())
         {
             MoveGrabbedObject(destPos, destRot);
         }
@@ -360,6 +360,15 @@ public class OVRGrabber : MonoBehaviour
 
         // Re-enable grab volumes to allow overlap events
         GrabVolumeEnable(true);
+    }
+
+    /// <returns>
+    ///     <c>true</c> if grabbed object should continue to move to its target position this
+    ///     anchor update tick or <c>false</c> otherwise.
+    /// </returns>
+    protected virtual bool IsMoveGrabbedObject()
+    {
+        return !m_parentHeldObject;
     }
 
     protected void GrabbableRelease(Vector3 linearVelocity, Vector3 angularVelocity)
