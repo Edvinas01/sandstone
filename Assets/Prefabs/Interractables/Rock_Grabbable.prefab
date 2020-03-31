@@ -192,7 +192,7 @@ MonoBehaviour:
   minPitch: 0.3
   maxPitch: 0.8
   isRandomOffset: 1
-  randomOffset: 1
+  randomOffset: 0.07
   clips:
   - {fileID: 8300000, guid: 951a4a508b4823e49a99dbc4766f88af, type: 3}
   - {fileID: 8300000, guid: 640bd40fbcf00a3469d4f49dca59cf70, type: 3}

@@ -128,14 +128,14 @@ MonoBehaviour:
         m_MethodName: Play
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: a5bc6b706d4c68548877624002017710,
+          m_ObjectArgument: {fileID: 8300000, guid: d0d917d528b80e94195808d70187fb52,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 0
+        m_CallState: 2
   onDeactivated:
     m_PersistentCalls:
       m_Calls:
@@ -225,7 +225,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a5bc6b706d4c68548877624002017710, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d0d917d528b80e94195808d70187fb52, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 0.9
@@ -327,6 +327,7 @@ MonoBehaviour:
   maxVolume: 0.2
   minPitch: 1.2
   maxPitch: 1.5
+  clips: []
 --- !u!1 &5756265358188112951
 GameObject:
   m_ObjectHideFlags: 0

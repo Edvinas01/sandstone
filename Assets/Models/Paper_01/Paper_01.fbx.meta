@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4f615f7ebb5e730429f6c7c547d5cf73
+guid: b3f79154d58bad14c8d4b9482a9e8d6d
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Torch_02_Material
-    second: {fileID: 2100000, guid: 0c2aaf18b6c379343879818073a3d415, type: 2}
+      name: Paper_01_Material
+    second: {fileID: 2100000, guid: f5f2beffafdf1744d91183baa92f3e75, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -41,7 +41,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
@@ -66,7 +66,7 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

@@ -22,7 +22,7 @@ namespace Audio
         [Tooltip("Clips to randomize")]
         public List<AudioClip> clips;
 
-        private new AudioSource audio;
+        private AudioSource audio;
 
         public void Start()
         {

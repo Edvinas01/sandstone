@@ -28,7 +28,7 @@ namespace Impact
         [Tooltip("Clips which will be played on hit")]
         public List<AudioClip> clips;
 
-        private new AudioSource audio;
+        private AudioSource audio;
 
         public void Start()
         {

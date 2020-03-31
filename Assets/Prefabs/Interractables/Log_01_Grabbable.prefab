@@ -26,6 +26,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flame
       objectReference: {fileID: 0}
+    - target: {fileID: 1431114689426550364, guid: c24366b5328a855449c72c4df34f3e0f,
+        type: 3}
+      propertyPath: m_Range
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431114689426550364, guid: c24366b5328a855449c72c4df34f3e0f,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4816057871316491676, guid: c24366b5328a855449c72c4df34f3e0f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -85,6 +95,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403077473721678295, guid: c24366b5328a855449c72c4df34f3e0f,
+        type: 3}
+      propertyPath: minIntensity
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403077473721678295, guid: c24366b5328a855449c72c4df34f3e0f,
+        type: 3}
+      propertyPath: maxIntensity
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5153298714602366392, guid: c24366b5328a855449c72c4df34f3e0f, type: 3}

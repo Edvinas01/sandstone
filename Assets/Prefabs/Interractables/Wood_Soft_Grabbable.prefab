@@ -192,7 +192,7 @@ MonoBehaviour:
   minPitch: 0.5
   maxPitch: 0.8
   isRandomOffset: 1
-  randomOffset: 1
+  randomOffset: 0.07
   clips:
   - {fileID: 8300000, guid: c16128c6ff89e9641935546a4d7db5df, type: 3}
   - {fileID: 8300000, guid: b14f273d78662824ebcca898ae24e700, type: 3}
@@ -215,3 +215,4 @@ MonoBehaviour:
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
   m_materialColorField: Outline_Color
+  m_renderer: {fileID: 0}

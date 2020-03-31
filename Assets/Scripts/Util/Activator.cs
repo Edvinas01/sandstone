@@ -15,7 +15,6 @@ namespace Util
         [Tooltip("Mode to start the activator with")]
         public Mode mode = Mode.None;
 
-        [ReadOnly]
         [Tooltip("Current state of the activator")]
         public bool isActive;
 
