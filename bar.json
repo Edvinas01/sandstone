@@ -1,0 +1,26 @@
+﻿[
+  {
+    "id": "cacee980-058f-4a2d-90d2-9340054f256d",
+    "timestamp": "2020-04-01T14:38:05",
+    "data": [
+      {
+        "id": 1,
+        "locationId": "7",
+        "plugin": "oculus",
+        "field": "FAR",
+        "distance": 0.57,
+        "time": 9103,
+        "movement": 34.2
+      },
+      {
+        "id": 2,
+        "locationId": "2",
+        "plugin": "goertek",
+        "field": "NEAR",
+        "distance": 0.46,
+        "time": 6032,
+        "movement": 24.3
+      }
+    ]
+  }
+]
