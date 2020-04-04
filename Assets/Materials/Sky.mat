@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sky
+  m_Shader: {fileID: -6465566751694194690, guid: 720cf52649969be478e8af7d57d41009,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Vector1_381925CA: 0.015
+    - Vector1_51EA0983: 5
+    - Vector1_593CCA5: 5
+    - Vector1_59EA20FE: 2
+    - Vector1_84B97C92: 5
+    m_Colors:
+    - Color_B5F5A4A8: {r: 0.9019608, g: 0.3878431, b: 0.09019604, a: 0}
+    - Color_B9B13071: {r: 0.9, g: 0.09000002, b: 0.09000002, a: 0}
+    - Color_DEA5C309: {r: 0.9019608, g: 0.1586275, b: 0.02745098, a: 0}
+--- !u!114 &5893155219509715725
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1

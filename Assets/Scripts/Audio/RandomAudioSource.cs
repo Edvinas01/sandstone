@@ -7,11 +7,11 @@ namespace Audio
     [RequireComponent(typeof(AudioSource))]
     public class RandomAudioSource : MonoBehaviour
     {
-        [Tooltip("Min volume of randomized clips")]
-        public float minVolume = 0.8f;
+        [Tooltip("Min volume scale of randomized clips")]
+        public float minVolumeScale = 0.8f;
 
-        [Tooltip("Max volume of randomized clips")]
-        public float maxVolume = 1f;
+        [Tooltip("Max volume scale of randomized clips")]
+        public float maxVolumeScale = 1f;
 
         [Tooltip("Min pitch of randomized clips")]
         public float minPitch = 0.8f;
@@ -36,11 +36,9 @@ namespace Audio
 
         public void Play(AudioClip clip)
         {
-            audio.volume = RandomUtils.GetRandom(minVolume, maxVolume);
+            var volumeScale = RandomUtils.GetRandom(minVolumeScale, maxVolumeScale);
             audio.pitch = RandomUtils.GetRandom(minPitch, maxPitch);
-            audio.clip = clip;
-
-            audio.Play();
+            audio.PlayOneShot(clip, volumeScale);
         }
     }
 }

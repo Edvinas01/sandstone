@@ -187,10 +187,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d606fe670f781646b1de48c0beaed2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minVolume: 0.8
-  maxVolume: 1
+  minVolumeScale: 0.8
+  maxVolumeScale: 1
   minPitch: 0.8
   maxPitch: 1
+  clips: []
 --- !u!114 &918858122291125187
 MonoBehaviour:
   m_ObjectHideFlags: 0
