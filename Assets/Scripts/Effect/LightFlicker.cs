@@ -19,7 +19,7 @@ namespace Effect
         [Tooltip(
             "External light to flicker; you can leave this null if you attach script to a light"
         )]
-        public Light light;
+        public new Light light;
 
         [Tooltip("Minimum random light intensity")]
         public float minIntensity;
