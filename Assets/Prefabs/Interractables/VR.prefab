@@ -41,7 +41,7 @@ AudioSource:
   m_GameObject: {fileID: 486887267081140940}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1768284223609551436, guid: 1dd706bb85d8aef4e83a6229dbd62c36,
+  OutputAudioMixerGroup: {fileID: -2476737884369623463, guid: 934496f5980bdde4d8bf58a1e0518f43,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -323,7 +323,7 @@ AudioSource:
   m_GameObject: {fileID: 5755160167936845695}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1768284223609551436, guid: 1dd706bb85d8aef4e83a6229dbd62c36,
+  OutputAudioMixerGroup: {fileID: -2476737884369623463, guid: 934496f5980bdde4d8bf58a1e0518f43,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -473,7 +473,7 @@ AudioSource:
   m_GameObject: {fileID: 5769959642962184980}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1768284223609551436, guid: 1dd706bb85d8aef4e83a6229dbd62c36,
+  OutputAudioMixerGroup: {fileID: -2476737884369623463, guid: 934496f5980bdde4d8bf58a1e0518f43,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -623,7 +623,7 @@ AudioSource:
   m_GameObject: {fileID: 6534316348013312034}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1768284223609551436, guid: 1dd706bb85d8aef4e83a6229dbd62c36,
+  OutputAudioMixerGroup: {fileID: -2476737884369623463, guid: 934496f5980bdde4d8bf58a1e0518f43,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -636,7 +636,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.5945178
-  MaxDistance: 2
+  MaxDistance: 5
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -772,7 +772,7 @@ AudioSource:
   m_GameObject: {fileID: 8862745242536317781}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 8197250397178320378, guid: 1dd706bb85d8aef4e83a6229dbd62c36,
+  OutputAudioMixerGroup: {fileID: -1293151144536021375, guid: 934496f5980bdde4d8bf58a1e0518f43,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
