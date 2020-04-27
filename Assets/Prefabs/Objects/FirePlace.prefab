@@ -363,26 +363,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8341046807323561759, guid: c24366b5328a855449c72c4df34f3e0f,
         type: 3}
-      propertyPath: m_Volume
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8341046807323561759, guid: c24366b5328a855449c72c4df34f3e0f,
-        type: 3}
-      propertyPath: m_Pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8341046807323561759, guid: c24366b5328a855449c72c4df34f3e0f,
-        type: 3}
-      propertyPath: MinDistance
-      value: 1.8435469
-      objectReference: {fileID: 0}
-    - target: {fileID: 8341046807323561759, guid: c24366b5328a855449c72c4df34f3e0f,
-        type: 3}
-      propertyPath: MaxDistance
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8341046807323561759, guid: c24366b5328a855449c72c4df34f3e0f,
-        type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inSlope
       value: -1.1433141
       objectReference: {fileID: 0}
@@ -398,8 +378,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8341046807323561759, guid: c24366b5328a855449c72c4df34f3e0f,
         type: 3}
-      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
-      value: 0.5
+      propertyPath: MaxDistance
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8474740480620741480, guid: c24366b5328a855449c72c4df34f3e0f,
         type: 3}
