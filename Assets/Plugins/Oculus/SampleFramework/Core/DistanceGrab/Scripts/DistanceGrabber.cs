@@ -149,7 +149,10 @@ namespace OculusSampleFramework
                 }
                 else
                 {
-                    onMove.Invoke();
+                    if (!closestGrabbable.ignoreMoveEvent)
+                    {
+                        onMove.Invoke();
+                    }
                 }
 
                 m_grabbedObj = closestGrabbable;
