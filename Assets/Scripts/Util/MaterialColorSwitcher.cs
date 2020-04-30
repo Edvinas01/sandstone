@@ -4,7 +4,7 @@ namespace Util
 {
     public class MaterialColorSwitcher : MonoBehaviour
     {
-        [Tooltip("Mesh renderer whose material")]
+        [Tooltip("Mesh renderer whose material to switch")]
         public MeshRenderer meshRenderer;
 
         [Tooltip("Material whose color to switch, only name will be used")]
@@ -32,9 +32,14 @@ namespace Util
             }
         }
 
+        public void SwitchColor(Color newColor)
+        {
+            instanceMaterial.SetColor(colorField, newColor);
+        }
+
         public void SwitchColor()
         {
-            instanceMaterial.SetColor(colorField, color);
+            SwitchColor(color);
         }
 
         public void ResetColor()
