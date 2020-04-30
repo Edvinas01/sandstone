@@ -19,6 +19,9 @@ namespace OculusSampleFramework
     {
         public string m_materialColorField = "Outline_Color";
         public Renderer m_renderer;
+        
+        [Tooltip("Should grabbable move event be ignored")]
+        public bool ignoreMoveEvent;
 
         GrabbableCrosshair m_crosshair;
         GrabManager m_crosshairManager;
@@ -57,6 +60,12 @@ namespace OculusSampleFramework
             m_mpb = new MaterialPropertyBlock();
             RefreshCrosshair();
             initialColor = m_mpb.GetColor(m_materialColorField);
+
+            if (m_renderer == null)
+            {
+                return;
+            }
+            
             m_renderer.SetPropertyBlock(m_mpb);
         }
 
@@ -70,6 +79,11 @@ namespace OculusSampleFramework
             }
             if (m_materialColorField != null)
             {
+                if (m_renderer == null)
+                {
+                    return;
+                }
+                
                 m_renderer.GetPropertyBlock(m_mpb);
                 if (isGrabbed || !InRange) m_mpb.SetColor(m_materialColorField, initialColor);
                 else if (Targeted) m_mpb.SetColor(m_materialColorField, m_crosshairManager.OutlineColorHighlighted);
@@ -80,19 +94,28 @@ namespace OculusSampleFramework
 
         public void SetColor(Color focusColor)
         {
-            m_mpb.SetColor(m_materialColorField, focusColor);
-            m_renderer.SetPropertyBlock(m_mpb);
+            SetRendererColor(focusColor);
         }
 
         public void ClearColor()
         {
-            m_mpb.SetColor(m_materialColorField, initialColor);
-            m_renderer.SetPropertyBlock(m_mpb);
+            SetRendererColor(initialColor);
         }
         
         private Renderer GetRenderer()
         {
             return m_renderer != null ? m_renderer : GetComponent<Renderer>();
+        }
+
+        private void SetRendererColor(Color color)
+        {
+            if (m_renderer == null)
+            {
+                return;
+            }
+            
+            m_mpb.SetColor(m_materialColorField, color);
+            m_renderer.SetPropertyBlock(m_mpb);
         }
     }
 }

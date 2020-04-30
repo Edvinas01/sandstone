@@ -7,11 +7,11 @@ namespace Impact
     [RequireComponent(typeof(AudioSource))]
     public class ImpactAudioSource : MonoBehaviour
     {
-        [Tooltip("Minimum volume of impact clips")]
-        public float minVolume = 0.8f;
+        [Tooltip("Minimum volume scale of impact clips")]
+        public float minVolumeScale = 0.8f;
 
-        [Tooltip("Maximum volume of impact clips")]
-        public float maxVolume = 1f;
+        [Tooltip("Maximum volume scale of impact clips")]
+        public float maxVolumeScale = 1f;
 
         [Tooltip("Minimum pitch of impact clips")]
         public float minPitch = 0.8f;
@@ -28,7 +28,7 @@ namespace Impact
         [Tooltip("Clips which will be played on hit")]
         public List<AudioClip> clips;
 
-        private AudioSource audio;
+        private new AudioSource audio;
 
         public void Start()
         {
@@ -48,11 +48,9 @@ namespace Impact
                 return;
             }
 
-            audio.volume = GetVolume(strength);
+            var volumeScale = GetVolume(strength);
             audio.pitch = GetPitch(strength);
-            audio.clip = clip;
-
-            audio.Play();
+            audio.PlayOneShot(clip, volumeScale);
         }
 
         private float GetOffset()
@@ -67,12 +65,12 @@ namespace Impact
 
         private float GetVolume(float strength)
         {
-            var volume = (maxVolume - minVolume) * strength + GetOffset();
+            var volume = (maxVolumeScale - minVolumeScale) * strength + GetOffset();
 
             return Mathf.Clamp(
-                value: minVolume + volume,
-                min: minVolume,
-                max: maxVolume
+                value: minVolumeScale + volume,
+                min: minVolumeScale,
+                max: maxVolumeScale
             );
         }
 

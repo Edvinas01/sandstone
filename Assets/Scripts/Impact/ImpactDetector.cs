@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,6 +15,7 @@ namespace Impact
         [Tooltip("Impulse level from which impact detector registers maximum strength")]
         public float maxImpulse = 5;
 
+        [Tooltip("Called when impact is detected")]
         public OnHitEvent onImpact;
 
         [Serializable]

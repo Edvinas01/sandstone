@@ -5,27 +5,27 @@ namespace Button
 {
     public class PressureButton : MonoBehaviour
     {
-        [Tooltip("Rigid body which is attached to the button")]
+        [Tooltip("The moving part of the button")]
         public Rigidbody buttonBody;
 
-        [Tooltip("Base the button is attached to")]
-        public Transform buttonBase;
+        [Tooltip("Point when which when reached by the button will trigger it")]
+        public Transform activationPoint;
 
-        [Tooltip("Distance threshold to button base, when the button should activate")]
+        [Tooltip("Distance threshold to activation point, when the button should activate")]
         public float activationThreshold = 0.1f;
 
         [Tooltip("Can the button be activated only once")]
         public bool singleUse;
 
         [Tooltip("Fired when button is activated")]
-        public UnityEvent activated;
+        public UnityEvent onActivated;
 
         [Tooltip("Fired when button is deactivated")]
-        public UnityEvent deactivated;
+        public UnityEvent onDeactivated;
 
         private bool active;
 
-        public void Update()
+        private void FixedUpdate()
         {
             if (singleUse && active)
             {
@@ -33,30 +33,24 @@ namespace Button
             }
 
             var distance = Vector3.Distance(
-                buttonBase.position,
-                transform.position
+                buttonBody.transform.position,
+                activationPoint.position
             );
 
-            if (distance <= activationThreshold)
+            if (distance <= activationThreshold && !active)
             {
-                if (!active)
-                {
-                    activated.Invoke();
-                    active = true;
+                onActivated.Invoke();
+                active = true;
 
-                    if (singleUse)
-                    {
-                        buttonBody.isKinematic = true;
-                    }
+                if (singleUse)
+                {
+                    buttonBody.isKinematic = true;
                 }
             }
-            else
+            else if (active)
             {
-                if (active)
-                {
-                    deactivated.Invoke();
-                    active = false;
-                }
+                onDeactivated.Invoke();
+                active = false;
             }
         }
     }
