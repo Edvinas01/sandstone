@@ -6,17 +6,27 @@ using UnityEngine.Events;
 namespace Symbol
 {
     [RequireComponent(typeof(LineRenderer))]
+    [RequireComponent(typeof(MeshFilter))]
     [RequireComponent(typeof(Collider))]
     public class SymbolReader : MonoBehaviour
     {
-        [Tooltip("Color of the highlighting")]
-        public Color highlightColor = Color.green;
+        [Tooltip("Game object which will be used for pointing at symbols instead of lasers")]
+        public GameObject hologram;
+
+        [Tooltip("How far to scale the hologram behind the object")]
+        public float hologramScale = 0.8f;
 
         [Tooltip("Called when symbol decal is read")]
         public SymbolDecalEvent onSymbolDecal;
 
-        [Tooltip("Called when no decals are found")]
+        [Tooltip("Called when no decals are found for reading")]
         public UnityEvent onNoDecal;
+
+        [Tooltip("Called when symbol decal enters range of the reader")]
+        public UnityEvent onEnterSymbolDecal;
+
+        [Tooltip("Called when symbol decal exists range of the reader")]
+        public UnityEvent onExitSymbolDecal;
 
         private LineRenderer lineRenderer;
         private SymbolDecal target;
@@ -71,6 +81,16 @@ namespace Symbol
             return closest;
         }
 
+        private void SetActiveHologram(bool active)
+        {
+            if (hologram == null)
+            {
+                return;
+            }
+
+            hologram.SetActive(active);
+        }
+
         private void TargetClosestDecal()
         {
             var newTarget = GetClosestTarget();
@@ -85,15 +105,36 @@ namespace Symbol
             {
                 oldTarget.materialColorSwitcher.ResetColor();
                 lineRenderer.enabled = false;
+                SetActiveHologram(false);
+                onExitSymbolDecal.Invoke();
             }
 
             if (newTarget != null)
             {
-                newTarget.materialColorSwitcher.SwitchColor(highlightColor);
+                newTarget.materialColorSwitcher.SwitchColor();
                 lineRenderer.enabled = true;
+                SetActiveHologram(true);
+                onEnterSymbolDecal.Invoke();
             }
 
             target = newTarget;
+        }
+
+        private void UpdateHologram()
+        {
+            var hologramTransform = hologram.transform;
+
+            var startPosition = hologramTransform.position;
+            var endPosition = target.transform.position;
+
+            var scale = hologramTransform.localScale;
+            hologramTransform.localScale = new Vector3(
+                scale.x,
+                scale.y,
+                Mathf.Abs(startPosition.z - endPosition.z) * hologramScale
+            );
+
+            hologramTransform.LookAt(endPosition);
         }
 
         private void UpdateLaser()
@@ -129,6 +170,8 @@ namespace Symbol
         {
             lineRenderer = GetComponent<LineRenderer>();
             lineRenderer.enabled = false;
+
+            SetActiveHologram(false);
         }
 
         private void Update()
@@ -143,7 +186,14 @@ namespace Symbol
                 ReadSymbolDecal();
             }
 
-            UpdateLaser();
+            if (hologram != null)
+            {
+                UpdateHologram();
+            }
+            else
+            {
+                UpdateLaser();
+            }
         }
 
         private void OnTriggerEnter(Collider other)

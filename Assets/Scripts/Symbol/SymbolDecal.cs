@@ -16,17 +16,42 @@ namespace Symbol
         [Tooltip("Color switcher of the symbol")]
         public MaterialColorSwitcher materialColorSwitcher;
 
-        [Tooltip("Mesh whose vertices to use")]
+        [Tooltip("Mesh whose vertices to use in case outline container is not set")]
         public MeshFilter meshFilter;
 
+        [Tooltip("Object holding transforms which form the outline")]
+        public GameObject outlineContainer;
+
+        private List<Transform> transforms = new List<Transform>();
+
         /// <returns>
-        /// Vertices in world space.
+        /// Sorted vertices (in world space).
         /// </returns>
         public List<Vector3> GetVertices()
         {
+            if (transforms.Count > 0)
+            {
+                return transforms
+                    .Select(tr => tr.position)
+                    .ToList();
+            }
             return meshFilter.mesh.vertices
                 .Select(vertex => transform.TransformPoint(vertex))
                 .ToList();
         }
+
+        private void Start()
+        {
+            if (outlineContainer == null)
+            {
+                return;
+            }
+
+            transforms = outlineContainer
+                .GetComponentsInChildren<Transform>()
+                .Where(tr => tr.gameObject != gameObject)
+                .ToList();
+        }
+
     }
 }

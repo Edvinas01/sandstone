@@ -1,9 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Util
 {
     public class MaterialColorSwitcher : MonoBehaviour
     {
+        [Tooltip("Keywords which should be enabled on material instance")]
+        public List<string> enableKeywords;
+
         [Tooltip("Mesh renderer whose material to switch")]
         public MeshRenderer meshRenderer;
 
@@ -19,19 +23,6 @@ namespace Util
         private Material instanceMaterial;
         private Color initialColor;
 
-        public void Start()
-        {
-            foreach (var rendererMaterial in meshRenderer.materials)
-            {
-                if (rendererMaterial.name.StartsWith(material.name))
-                {
-                    instanceMaterial = rendererMaterial;
-                    initialColor = rendererMaterial.GetColor(colorField);
-                    break;
-                }
-            }
-        }
-
         public void SwitchColor(Color newColor)
         {
             instanceMaterial.SetColor(colorField, newColor);
@@ -45,6 +36,29 @@ namespace Util
         public void ResetColor()
         {
             instanceMaterial.SetColor(colorField, initialColor);
+        }
+
+        private void EnableKeywords(Material mat)
+        {
+            foreach (var keyword in enableKeywords)
+            {
+                mat.EnableKeyword(keyword);
+            }
+        }
+
+        private void Start()
+        {
+            foreach (var rendererMaterial in meshRenderer.materials)
+            {
+                if (rendererMaterial.name.StartsWith(material.name))
+                {
+                    instanceMaterial = rendererMaterial;
+                    EnableKeywords(instanceMaterial);
+
+                    initialColor = rendererMaterial.GetColor(colorField);
+                    break;
+                }
+            }
         }
     }
 }
