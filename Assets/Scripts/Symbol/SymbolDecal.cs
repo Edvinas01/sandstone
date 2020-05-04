@@ -22,6 +22,11 @@ namespace Symbol
         [Tooltip("Object holding transforms which form the outline")]
         public GameObject outlineContainer;
 
+        /// <summary>
+        /// Is this symbol currently highlighted
+        /// </summary>
+        public bool Highlighted { get; private set; }
+
         private List<Transform> transforms = new List<Transform>();
 
         /// <returns>
@@ -38,6 +43,24 @@ namespace Symbol
             return meshFilter.mesh.vertices
                 .Select(vertex => transform.TransformPoint(vertex))
                 .ToList();
+        }
+
+        /// <summary>
+        /// Clears highlighting for this symbol.
+        /// </summary>
+        public void ClearHighlight()
+        {
+            materialColorSwitcher.ResetColor();
+            Highlighted = false;
+        }
+
+        /// <summary>
+        /// Highlights this symbol.
+        /// </summary>
+        public void Highlight()
+        {
+            materialColorSwitcher.SwitchColor();
+            Highlighted = true;
         }
 
         private void Start()

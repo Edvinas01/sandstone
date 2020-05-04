@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 namespace Symbol
 {
-    [RequireComponent(typeof(LineRenderer))]
     [RequireComponent(typeof(MeshFilter))]
     [RequireComponent(typeof(Collider))]
     public class SymbolReader : MonoBehaviour
@@ -31,7 +30,6 @@ namespace Symbol
         [Tooltip("Called when symbol decal exists range of the reader")]
         public UnityEvent onExitSymbolDecal;
 
-        private LineRenderer lineRenderer;
         private SymbolDecal target;
 
         private readonly List<SymbolDecal> decals = new List<SymbolDecal>();
@@ -106,8 +104,7 @@ namespace Symbol
 
         private void UnTarget(SymbolDecal decal)
         {
-            decal.materialColorSwitcher.ResetColor();
-            lineRenderer.enabled = false;
+            decal.ClearHighlight();
             SetActiveHologram(false);
             SetActiveLight(false);
             onExitSymbolDecal.Invoke();
@@ -115,8 +112,7 @@ namespace Symbol
 
         private void Target(SymbolDecal decal)
         {
-            decal.materialColorSwitcher.SwitchColor();
-            lineRenderer.enabled = true;
+            decal.Highlight();
             SetActiveHologram(true);
             SetActiveLight(true);
             onEnterSymbolDecal.Invoke();
@@ -174,40 +170,8 @@ namespace Symbol
             );
         }
 
-        private void UpdateLaser()
-        {
-            var position = transform.position;
-            var vertices = target.GetVertices();
-
-            lineRenderer.positionCount = vertices.Count * 2;
-
-            var laserIdx = 0;
-            foreach (var vertex in vertices)
-            {
-                lineRenderer.SetPosition(laserIdx++, position);
-                lineRenderer.SetPosition(laserIdx++, vertex);
-            }
-        }
-
-        private void OnDrawGizmos()
-        {
-            if (target == null)
-            {
-                return;
-            }
-
-            foreach (var vertex in target.GetVertices())
-            {
-                Gizmos.color = Color.red;
-                Gizmos.DrawSphere(vertex, 0.05f);
-            }
-        }
-
         private void Awake()
         {
-            lineRenderer = GetComponent<LineRenderer>();
-            lineRenderer.enabled = false;
-
             SetActiveHologram(false);
             SetActiveLight(false);
         }
@@ -219,19 +183,8 @@ namespace Symbol
                 return;
             }
 
-            if (hologram != null)
-            {
-                UpdateHologram();
-            }
-            else
-            {
-                UpdateLaser();
-            }
-
-            if (light != null)
-            {
-                UpdateLight();
-            }
+            UpdateHologram();
+            UpdateLight();
         }
 
         private void OnTriggerEnter(Collider other)
