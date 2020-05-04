@@ -75,6 +75,7 @@ namespace Symbol
 
                 if (distance < minDistance)
                 {
+                    minDistance = distance;
                     closest = decal;
                 }
             }
