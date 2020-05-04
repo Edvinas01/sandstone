@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6336424615225043636}
   - component: {fileID: 6336424615225043643}
   - component: {fileID: 4415984771435257253}
+  - component: {fileID: 9067143892773801802}
   m_Layer: 0
   m_Name: Device_Grabbable
   m_TagString: Untagged
@@ -254,3 +255,21 @@ MonoBehaviour:
   m_grabPoints: []
   m_materialColorField: Outline_Color
   m_renderer: {fileID: 0}
+  ignoreMoveEvent: 0
+--- !u!114 &9067143892773801802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6336424615225043647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d606fe670f781646b1de48c0beaed2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minVolumeScale: 0.8
+  maxVolumeScale: 1
+  minPitch: 0.8
+  maxPitch: 1
+  clips: []

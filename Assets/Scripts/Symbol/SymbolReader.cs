@@ -13,6 +13,9 @@ namespace Symbol
         [Tooltip("Game object which will be used for pointing at symbols instead of lasers")]
         public GameObject hologram;
 
+        [Tooltip("Light used to light up the hologram")]
+        public new Light light;
+
         [Tooltip("How far to scale the hologram behind the object")]
         public float hologramScale = 0.8f;
 
@@ -91,6 +94,34 @@ namespace Symbol
             hologram.SetActive(active);
         }
 
+        private void SetActiveLight(bool active)
+        {
+            if (light == null)
+            {
+                return;
+            }
+
+            light.enabled = active;
+        }
+
+        private void UnTarget(SymbolDecal decal)
+        {
+            decal.materialColorSwitcher.ResetColor();
+            lineRenderer.enabled = false;
+            SetActiveHologram(false);
+            SetActiveLight(false);
+            onExitSymbolDecal.Invoke();
+        }
+
+        private void Target(SymbolDecal decal)
+        {
+            decal.materialColorSwitcher.SwitchColor();
+            lineRenderer.enabled = true;
+            SetActiveHologram(true);
+            SetActiveLight(true);
+            onEnterSymbolDecal.Invoke();
+        }
+
         private void TargetClosestDecal()
         {
             var newTarget = GetClosestTarget();
@@ -103,18 +134,12 @@ namespace Symbol
 
             if (oldTarget != null)
             {
-                oldTarget.materialColorSwitcher.ResetColor();
-                lineRenderer.enabled = false;
-                SetActiveHologram(false);
-                onExitSymbolDecal.Invoke();
+                UnTarget(oldTarget);
             }
 
             if (newTarget != null)
             {
-                newTarget.materialColorSwitcher.SwitchColor();
-                lineRenderer.enabled = true;
-                SetActiveHologram(true);
-                onEnterSymbolDecal.Invoke();
+                Target(newTarget);
             }
 
             target = newTarget;
@@ -135,6 +160,18 @@ namespace Symbol
             );
 
             hologramTransform.LookAt(endPosition);
+        }
+
+        private void UpdateLight()
+        {
+            var startPosition = transform.position;
+            var endPosition = target.transform.position;
+
+            light.transform.position = new Vector3(
+                (startPosition.x + endPosition.x) / 2,
+                (startPosition.y + endPosition.y) / 2,
+                (startPosition.z + endPosition.z) / 2
+            );
         }
 
         private void UpdateLaser()
@@ -172,6 +209,7 @@ namespace Symbol
             lineRenderer.enabled = false;
 
             SetActiveHologram(false);
+            SetActiveLight(false);
         }
 
         private void Update()
@@ -181,11 +219,6 @@ namespace Symbol
                 return;
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                ReadSymbolDecal();
-            }
-
             if (hologram != null)
             {
                 UpdateHologram();
@@ -193,6 +226,11 @@ namespace Symbol
             else
             {
                 UpdateLaser();
+            }
+
+            if (light != null)
+            {
+                UpdateLight();
             }
         }
 

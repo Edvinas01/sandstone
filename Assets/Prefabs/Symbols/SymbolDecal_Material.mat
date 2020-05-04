@@ -79,10 +79,10 @@ Material:
     - _ColorMode: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DistortionBlend: 0.5
+    - _DistortionBlend: 1
     - _DistortionEnabled: 0
-    - _DistortionStrength: 1
-    - _DistortionStrengthScaled: 0.1
+    - _DistortionStrength: 9.12
+    - _DistortionStrengthScaled: 0.912
     - _DstBlend: 10
     - _EnableExternalAlpha: 0
     - _EnvironmentReflections: 0
@@ -97,7 +97,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _SampleGI: 0
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SoftParticlesEnabled: 0
     - _SoftParticlesFarFadeDistance: 0.01
