@@ -98,7 +98,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 227e5ab989c9f574f9bf1b44a6b2afd2,
+  m_LightingDataAsset: {fileID: 112000000, guid: 3a9ee733c9704e34f8daea84a9e39bd5,
     type: 2}
   m_UseShadowmask: 0
 --- !u!196 &4
@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2053818435}
     m_Modifications:
+    - target: {fileID: 913209043, guid: 51b6d2ed58089b145965c32dff2b6efc, type: 3}
+      propertyPath: ignore.m_Bits
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 913209043, guid: 51b6d2ed58089b145965c32dff2b6efc, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4664261896715742099, guid: 51b6d2ed58089b145965c32dff2b6efc,
         type: 3}
       propertyPath: m_Name
@@ -7508,6 +7516,43 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1416949564}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1797014961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 964871859663093451, guid: 8d10fa2a93076ed4aac4cc2eae45ec0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 964871860749657135}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1797014963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797014961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1001 &1811876933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8488,12 +8533,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1846594673}
     m_Modifications:
-    - target: {fileID: 756681832260435823, guid: 803e446ce47a8434aaf2e95af8defa8f,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 3182121331594162725, guid: 9228a70fc11563446afe2ed9dc4b8fc9,
-        type: 3}
     - target: {fileID: 4719800421034899274, guid: 803e446ce47a8434aaf2e95af8defa8f,
         type: 3}
       propertyPath: m_Name

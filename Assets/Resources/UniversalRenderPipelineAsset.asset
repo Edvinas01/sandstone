@@ -35,8 +35,8 @@ MonoBehaviour:
   m_AdditionalLightsShadowmapResolution: 1024
   m_ShadowDistance: 100
   m_ShadowCascades: 2
-  m_Cascade2Split: 0.39974636
-  m_Cascade4Split: {x: 0.24905127, y: 0.4, z: 0.50033337}
+  m_Cascade2Split: 0.0914756
+  m_Cascade4Split: {x: 0.050518367, y: 0.10114856, z: 0.35011894}
   m_ShadowDepthBias: 3
   m_ShadowNormalBias: 0.6
   m_SoftShadowsSupported: 1
@@ -44,6 +44,7 @@ MonoBehaviour:
   m_SupportsDynamicBatching: 0
   m_MixedLightingSupported: 1
   m_DebugLevel: 0
+  m_PostProcessingFeatureSet: 0
   m_ColorGradingMode: 1
   m_ColorGradingLutSize: 32
   m_ShadowType: 1
