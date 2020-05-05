@@ -18,6 +18,9 @@ namespace Symbol
         [Tooltip("How far to scale the hologram behind the object")]
         public float hologramScale = 0.8f;
 
+        [Tooltip("Layer to target")]
+        public LayerMask layerMask;
+
         [Tooltip("Called when symbol decal is read")]
         public SymbolDecalEvent onSymbolDecal;
 
@@ -30,9 +33,8 @@ namespace Symbol
         [Tooltip("Called when symbol decal exists range of the reader")]
         public UnityEvent onExitSymbolDecal;
 
-        private SymbolDecal target;
-
         private readonly List<SymbolDecal> decals = new List<SymbolDecal>();
+        private SymbolDecal target;
 
         [Serializable]
         public class SymbolDecalEvent : UnityEvent<string>
@@ -60,8 +62,14 @@ namespace Symbol
             onSymbolDecal.Invoke(target.text);
         }
 
-        private SymbolDecal GetClosestTarget()
+        private SymbolDecal GetClosestDecal()
         {
+            // Most of the time only 1 decal will be tracked.
+            if (decals.Count == 1)
+            {
+                return decals[0];
+            }
+
             var minDistance = float.MaxValue;
             var position = transform.position;
 
@@ -81,6 +89,18 @@ namespace Symbol
             }
 
             return closest;
+        }
+
+        private bool IsInSight(SymbolDecal decal)
+        {
+            var intersects = Physics.Linecast(
+                transform.position,
+                decal.transform.position,
+                out var hit,
+                layerMask
+            );
+
+            return intersects && hit.collider.gameObject == decal.gameObject;
         }
 
         private void SetActiveHologram(bool active)
@@ -103,7 +123,7 @@ namespace Symbol
             light.enabled = active;
         }
 
-        private void UnTarget(SymbolDecal decal)
+        private void ClearHighlight(SymbolDecal decal)
         {
             decal.ClearHighlight();
             SetActiveHologram(false);
@@ -111,7 +131,7 @@ namespace Symbol
             onExitSymbolDecal.Invoke();
         }
 
-        private void Target(SymbolDecal decal)
+        private void Highlight(SymbolDecal decal)
         {
             decal.Highlight();
             SetActiveHologram(true);
@@ -119,27 +139,38 @@ namespace Symbol
             onEnterSymbolDecal.Invoke();
         }
 
+        private void Target(SymbolDecal decal = null)
+        {
+            if (target != null && target != decal && target.Highlighted)
+            {
+                ClearHighlight(target);
+            }
+
+            if (decal != null && !decal.Highlighted)
+            {
+                Highlight(decal);
+            }
+
+            target = decal;
+        }
+
         private void TargetClosestDecal()
         {
-            var newTarget = GetClosestTarget();
-            var oldTarget = target;
-
-            if (newTarget == oldTarget)
+            var closest = GetClosestDecal();
+            if (closest == null)
             {
+                Target();
                 return;
             }
 
-            if (oldTarget != null)
+            if (IsInSight(closest))
             {
-                UnTarget(oldTarget);
+                Target(closest);
             }
-
-            if (newTarget != null)
+            else
             {
-                Target(newTarget);
+                Target();
             }
-
-            target = newTarget;
         }
 
         private void UpdateHologram()
@@ -171,10 +202,26 @@ namespace Symbol
             );
         }
 
+        private void OnDrawGizmos()
+        {
+            if (target == null)
+            {
+                return;
+            }
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, target.transform.position);
+        }
+
         private void Awake()
         {
             SetActiveHologram(false);
             SetActiveLight(false);
+        }
+
+        private void FixedUpdate()
+        {
+            TargetClosestDecal();
         }
 
         private void Update()
@@ -197,7 +244,6 @@ namespace Symbol
             }
 
             decals.Add(decal);
-            TargetClosestDecal();
         }
 
         private void OnTriggerExit(Collider other)
@@ -209,7 +255,12 @@ namespace Symbol
             }
 
             decals.Remove(decal);
-            TargetClosestDecal();
+
+            // Remove dangling target.
+            if (decals.Count == 0)
+            {
+                Target();
+            }
         }
     }
 }
