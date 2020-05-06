@@ -279,7 +279,7 @@ PrefabInstance:
     - target: {fileID: 1431114689426550364, guid: c24366b5328a855449c72c4df34f3e0f,
         type: 3}
       propertyPath: m_Intensity
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4243415801332510053, guid: c24366b5328a855449c72c4df34f3e0f,
         type: 3}
@@ -351,10 +351,20 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 6403077473721678295, guid: c24366b5328a855449c72c4df34f3e0f,
+        type: 3}
+      propertyPath: maxIntensity
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7114353684493718821, guid: c24366b5328a855449c72c4df34f3e0f,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.013
+      objectReference: {fileID: 0}
+    - target: {fileID: 7379660582410101517, guid: c24366b5328a855449c72c4df34f3e0f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.454
       objectReference: {fileID: 0}
     - target: {fileID: 8341046807323561759, guid: c24366b5328a855449c72c4df34f3e0f,
         type: 3}

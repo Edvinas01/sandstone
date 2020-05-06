@@ -19,7 +19,7 @@ LightmapParameters:
   edgeStitching: 1
   blurRadius: 2
   directLightQuality: 64
-  antiAliasingSamples: 8
+  antiAliasingSamples: 1
   pushoff: 0.0001
   bakedLightmapTag: -1
   limitLightmapCount: 0

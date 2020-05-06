@@ -59,6 +59,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flame
       objectReference: {fileID: 0}
+    - target: {fileID: 1431114689426550364, guid: c24366b5328a855449c72c4df34f3e0f,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4801402824981525372, guid: c24366b5328a855449c72c4df34f3e0f,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.a

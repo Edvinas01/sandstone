@@ -31,6 +31,12 @@ namespace Util
         private void Awake()
         {
             nextScene = SceneManager.GetSceneByName(nextSceneName);
+            if (nextScene.IsValid())
+            {
+                return;
+            }
+
+            nextScene = SceneManager.GetActiveScene();
         }
     }
 }
