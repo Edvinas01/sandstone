@@ -114,12 +114,20 @@ public class OVRScreenFade : MonoBehaviour
 		}
 	}
 
+    /// <returns>
+    /// Coroutine for fading out the screen.
+    /// </returns>
+    public IEnumerator CreateFadeOut()
+    {
+        return Fade(0, 1);
+    }
+
 	/// <summary>
 	/// Start a fade out
 	/// </summary>
 	public void FadeOut()
     {
-        StartCoroutine(Fade(0,1));
+        StartCoroutine(CreateFadeOut());
     }
 
 
