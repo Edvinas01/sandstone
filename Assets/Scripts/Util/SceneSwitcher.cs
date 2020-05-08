@@ -37,6 +37,7 @@ namespace Util
             }
 
             nextScene = SceneManager.GetActiveScene();
+            nextSceneName = nextScene.name;
         }
     }
 }
