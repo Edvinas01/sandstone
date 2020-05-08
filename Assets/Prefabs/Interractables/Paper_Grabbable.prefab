@@ -254,3 +254,4 @@ MonoBehaviour:
   m_grabPoints: []
   m_materialColorField: Outline_Color
   m_renderer: {fileID: 0}
+  ignoreMoveEvent: 0
