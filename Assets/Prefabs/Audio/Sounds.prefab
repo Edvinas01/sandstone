@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2758724020960087845}
   - component: {fileID: 20796616242352}
-  - component: {fileID: 9011086745259477385}
+  - component: {fileID: 6005090800362858837}
   m_Layer: 0
   m_Name: Sounds
   m_TagString: Untagged
@@ -60,7 +60,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &9011086745259477385
+      - m_Target: {fileID: 6005090800362858837}
+        m_MethodName: TransitionFadeIn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6005090800362858837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,7 +80,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2758724020960087844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 371dce946ba05224ab8edc14f03b9f46, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d59e0c9a2a7a0647afd4c9e3bdc1dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixerData: []
+  audioMixer: {fileID: 24100000, guid: 934496f5980bdde4d8bf58a1e0518f43, type: 2}
+  snapshotTransitionDuration: 5
+  fadedOutSnapshotName: Only Music
+  fadedInSnapshotName: Gameplay

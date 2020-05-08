@@ -52,6 +52,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!245 &-1816369360702990149
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Only Music
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: ce0d0fe923bfdd040bdf51b2d8c8ece8
+  m_FloatValues:
+    4b3c1476767f11f4db1bb3cc8e3ced69: -20
+    939e53ea98e426445969f9456317a58b: -80
+    c35a7a0da779f3844bd680bbe7e99cab: -80
+  m_TransitionOverrides: {}
 --- !u!243 &-1293151144536021375
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -95,14 +109,13 @@ AudioMixerController:
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
+  - {fileID: -1816369360702990149}
   - {fileID: 24500006}
-  m_StartSnapshot: {fileID: 24500006}
+  m_StartSnapshot: {fileID: -1816369360702990149}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters:
-  - guid: c35a7a0da779f3844bd680bbe7e99cab
-    name: EffectsVolume
+  m_ExposedParameters: []
   m_AudioMixerGroupViews:
   - guids:
     - ed6b505c6fa73ee46816d4c1afd3dcbb
@@ -131,7 +144,7 @@ AudioMixerGroupController:
   m_Effects:
   - {fileID: 24400004}
   m_UserColorIndex: 0
-  m_Mute: 0
+  m_Mute: 1
   m_Solo: 0
   m_BypassEffects: 0
 --- !u!244 &24400004
@@ -154,13 +167,13 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Snapshot
+  m_Name: Gameplay
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 5c35ccd9ba92dd34bb1c98cf69ae38a3
   m_FloatValues:
-    4b3c1476767f11f4db1bb3cc8e3ced69: -19.928473
-    939e53ea98e426445969f9456317a58b: -35.30951
-    c35a7a0da779f3844bd680bbe7e99cab: -5.3230715
+    4b3c1476767f11f4db1bb3cc8e3ced69: -20
+    939e53ea98e426445969f9456317a58b: -35
+    c35a7a0da779f3844bd680bbe7e99cab: -5
   m_TransitionOverrides: {}
 --- !u!244 &7482465046082635757
 AudioMixerEffectController:

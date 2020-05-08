@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2832288135729311097}
   - component: {fileID: 2832288135729311098}
-  - component: {fileID: 2832288135729311099}
   - component: {fileID: 2832288135729311100}
   - component: {fileID: 2832288135729311101}
   m_Layer: 0
@@ -29,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2832288135729311102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 28, y: 28, z: 28}
   m_Children:
   - {fileID: 2832288135988703954}
   - {fileID: 2832288136056921129}
@@ -56,20 +55,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2832288135729311099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2832288135729311102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a0a77c7cc2ad25488ad095e203ef1ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextSceneName: 
-  fade: {fileID: 0}
 --- !u!114 &2832288135729311100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,12 +68,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectContainer: {fileID: 0}
-  allowed: []
+  allowed:
+  - {fileID: 0}
   onFilter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2832288135729311099}
-        m_MethodName: LoadNextScene
+      - m_Target: {fileID: 0}
+        m_MethodName: TransitionFadeOut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
