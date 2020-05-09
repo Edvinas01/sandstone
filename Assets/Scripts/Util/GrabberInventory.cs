@@ -35,6 +35,7 @@ namespace Util
         {
             var grabbable = slot.Grabbable;
             grabbable.transform.localScale = slot.OriginalScale;
+            grabbable.transform.parent = null;
             grabbable.gameObject.SetActive(true);
 
             slot.OriginalScale = Vector3.zero;
