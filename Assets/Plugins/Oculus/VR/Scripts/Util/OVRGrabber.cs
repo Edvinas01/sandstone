@@ -136,6 +136,22 @@ public class OVRGrabber : MonoBehaviour
     virtual public void Update()
     {
         alreadyUpdated = false;
+
+        var removeCandidates = new List<OVRGrabbable>(m_grabCandidates.Count);
+        foreach (var candidate in m_grabCandidates.Keys)
+        {
+            if (candidate.gameObject.activeSelf)
+            {
+                continue;
+            }
+            
+            removeCandidates.Add(candidate);
+        }
+        
+        foreach (var candidate in removeCandidates)
+        {
+            m_grabCandidates.Remove(candidate);
+        }
     }
 
     virtual public void FixedUpdate()
