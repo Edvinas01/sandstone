@@ -11,9 +11,6 @@ namespace Util
         [Tooltip("Game object containing snapping slot transforms")]
         public GameObject slotContainer;
 
-        [Tooltip("Should grabbables be locked in once snapped")]
-        public bool lockIn;
-
         [Tooltip("Scale of items once they're inside snap slots")]
         public float scale = 1f;
 
