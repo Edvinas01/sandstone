@@ -13,6 +13,14 @@ namespace Util
         [Tooltip("Assigned grabbed to this inventory")]
         public OVRGrabber grabber;
 
+        private void SetActiveGrabbables(bool active)
+        {
+            foreach (var grabbable in snapper.GetSnapped())
+            {
+                grabbable.gameObject.SetActive(active);
+            }
+        }
+
         private void Update()
         {
             var controller = grabber.Controller;
@@ -21,15 +29,18 @@ namespace Util
                 var grabbable = grabber.grabbedObject;
                 if (grabbable != null && grabbable.allowInventory)
                 {
-                    snapper.Snap(grabbable);
+                    if (snapper.Snap(grabbable))
+                    {
+                        grabbable.gameObject.SetActive(false);
+                    }
                     return;
                 }
 
-                snapper.SetActiveGrabbables(true);
+                SetActiveGrabbables(true);
             }
             else if (OVRInput.GetUp(trigger, controller))
             {
-                snapper.SetActiveGrabbables(false);
+                SetActiveGrabbables(false);
             }
         }
     }

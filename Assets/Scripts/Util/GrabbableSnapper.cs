@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,16 +11,24 @@ namespace Util
         [Tooltip("Game object containing snapping slot transforms")]
         public GameObject slotContainer;
 
+        [Tooltip("Should grabbables be locked in once snapped")]
+        public bool lockIn;
+
         [Tooltip("Scale of items once they're inside snap slots")]
         public float scale = 1f;
 
         [Tooltip("Called when a grabbable is released")]
-        public UnityEvent onRelease;
+        public SnapEvent onRelease;
 
         [Tooltip("Called when a grabbable is snapped")]
-        public UnityEvent onSnap;
+        public SnapEvent onSnap;
 
         private List<Slot> slots;
+
+        [Serializable]
+        public class SnapEvent : UnityEvent<GameObject>
+        {
+        }
 
         private class Slot
         {
@@ -29,36 +38,55 @@ namespace Util
         }
 
         /// <summary>
-        /// Change each grabbables game object active state.
+        /// Snap game object to an available slot if it has a grabbable component.
         /// </summary>
-        public void SetActiveGrabbables(bool active)
+        public void Snap(GameObject obj)
         {
-            var grabbables = slots
-                .Select(slot => slot.Grabbable)
-                .Where(grabbable => grabbable != null);
-
-            foreach (var grabbable in grabbables)
+            var grabbable = obj.GetComponentInParent<OVRGrabbable>();
+            if (grabbable != null)
             {
-                grabbable.gameObject.SetActive(active);
+                Snap(grabbable);
             }
         }
 
         /// <summary>
-        /// Store grabbable to an available slot.
+        /// Snap grabbable to an available slot.
         /// </summary>
-        public void Snap(OVRGrabbable grabbable)
+        public bool Snap(OVRGrabbable grabbable)
         {
             var emptySlot = GetEmptySlot();
-            if (emptySlot != null)
+            if (emptySlot == null || IsSnapped(grabbable))
             {
-                Snap(emptySlot, grabbable);
+                return false;
             }
+
+            Snap(emptySlot, grabbable);
+            return true;
+
+        }
+
+        /// <returns>
+        /// List of snapped grabbables.
+        /// </returns>
+        public IEnumerable<OVRGrabbable> GetSnapped()
+        {
+            return slots
+                .Where(slot => slot.Grabbable != null)
+                .Select(slot => slot.Grabbable);
+        }
+
+        private Slot GetEmptySlot()
+        {
+            return slots.FirstOrDefault(slot => slot.Grabbable == null);
         }
 
         private void Snap(Slot slot, OVRGrabbable grabbable)
         {
-            // Cleanup OVR state.
-            grabbable.grabbedBy.ForceRelease(grabbable);
+            if (grabbable.grabbedBy != null)
+            {
+                grabbable.grabbedBy.ForceRelease(grabbable);
+            }
+
             grabbable.GetComponent<Rigidbody>().isKinematic = true;
 
             // Move to parent.
@@ -75,27 +103,32 @@ namespace Util
             slot.OriginalScale = grabbableScale;
             slot.Grabbable = grabbable;
 
-            grabbable.gameObject.SetActive(false);
-
-            onSnap.Invoke();
+            onSnap.Invoke(grabbable.gameObject);
         }
 
-        private Slot GetEmptySlot()
+        private bool IsSlotTransform(Transform tr)
         {
-            return slots.FirstOrDefault(slot => slot.Grabbable == null);
+            var parent = tr.parent;
+            return slots.Any(slot => slot.Transform == parent);
         }
 
         private void Release(Slot slot)
         {
-            var grabbableTransform = slot.Grabbable.transform;
+            var grabbable = slot.Grabbable;
+            var grabbableTransform = grabbable.transform;
             grabbableTransform.localScale = slot.OriginalScale;
-            grabbableTransform.parent = null;
+
+            if (IsSlotTransform(grabbableTransform))
+            {
+                grabbableTransform.parent = null;
+            }
+
             grabbableTransform.gameObject.SetActive(true);
 
             slot.OriginalScale = Vector3.zero;
             slot.Grabbable = null;
 
-            onRelease.Invoke();
+            onRelease.Invoke(grabbable.gameObject);
         }
 
         private void Awake()
@@ -122,6 +155,11 @@ namespace Util
                     Release(slot);
                 }
             }
+        }
+
+        private static bool IsSnapped(Component grabbable)
+        {
+            return grabbable.GetComponentInParent<GrabbableSnapper>() != null;
         }
     }
 }
