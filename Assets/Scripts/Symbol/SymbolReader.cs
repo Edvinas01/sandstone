@@ -213,6 +213,12 @@ namespace Symbol
             Gizmos.DrawLine(transform.position, target.transform.position);
         }
 
+        private void OnDisable()
+        {
+            Target();
+            decals.Clear();
+        }
+
         private void Awake()
         {
             SetActiveHologram(false);

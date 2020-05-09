@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913209041}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.1705}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.1705, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 4664261896715742101}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!64 &913209045
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
   hologramScale: 0.5
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   onSymbolDecal:
     m_PersistentCalls:
       m_Calls:
@@ -192,17 +192,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498568314}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0369}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.023}
   m_LocalScale: {x: 0.0002, y: 0.0002, z: 1}
   m_Children:
   - {fileID: 1906295091}
   m_Father: {fileID: 4664261896715742101}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.0237}
+  m_AnchoredPosition: {x: 0, y: -0.035}
   m_SizeDelta: {x: 440, y: 690}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1498568318
@@ -343,6 +343,95 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Hello, I'm your friendly symbol translator device. Point me at a symbol,
     click the trigger button and I will translate it!
+--- !u!114 &4353835560989599339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4664261896715742099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb12c067443829419714db8132ad8dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabbable: {fileID: 3034849070721588361}
+  activator: {fileID: 8635260981855848802}
+  button: 8192
+  toggle: 0
+--- !u!114 &8635260981855848802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4664261896715742099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a177d3bd316be4c96e4b307280e55d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 0
+  isActive: 0
+  onActivated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7674624914372202086}
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 41174726f56351e4888e1d9d69a71b39,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 913209043}
+        m_MethodName: ReadSymbolDecal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDeactivated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7674624914372202086}
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: dcef8bea4fc68114d9fcd08076ba8051,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7254723046236488274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4618436785213112137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4e3b04c8be2594bb2369a925b7311a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableKeywords:
+  - _EMISSION
+  meshRenderer: {fileID: 6353222027052796821}
+  material: {fileID: 2100000, guid: 39390a5b0a67083419eb615e9a077a0a, type: 2}
+  color: {r: 0, g: 4, b: 4, a: 0}
+  colorField: _EmissionColor
 --- !u!1 &2898147284918675043
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +457,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2898147284918675043}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4664261896715742101}
@@ -471,95 +560,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7254723046236488274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4618436785213112137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac4e3b04c8be2594bb2369a925b7311a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enableKeywords:
-  - _EMISSION
-  meshRenderer: {fileID: 6353222027052796821}
-  material: {fileID: 2100000, guid: 39390a5b0a67083419eb615e9a077a0a, type: 2}
-  color: {r: 0, g: 4, b: 4, a: 0}
-  colorField: _EmissionColor
---- !u!114 &4353835560989599339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4664261896715742099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cb12c067443829419714db8132ad8dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabbable: {fileID: 3034849070721588361}
-  activator: {fileID: 8635260981855848802}
-  button: 8192
-  toggle: 0
---- !u!114 &8635260981855848802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4664261896715742099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4a177d3bd316be4c96e4b307280e55d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mode: 0
-  isActive: 0
-  onActivated:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7674624914372202086}
-        m_MethodName: Play
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 41174726f56351e4888e1d9d69a71b39,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 913209043}
-        m_MethodName: ReadSymbolDecal
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDeactivated:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7674624914372202086}
-        m_MethodName: Play
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: dcef8bea4fc68114d9fcd08076ba8051,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &5212151184599712976
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,7 +682,7 @@ PrefabInstance:
     - target: {fileID: 6336424615225043641, guid: 8e06bbca54e53d34a8f816c38626a467,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.51
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6336424615225043641, guid: 8e06bbca54e53d34a8f816c38626a467,
         type: 3}
@@ -807,22 +807,22 @@ PrefabInstance:
     - target: {fileID: 6996882945913719061, guid: fac975a9366e10b49a80e9501fa4cf6c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6996882945913719061, guid: fac975a9366e10b49a80e9501fa4cf6c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.70710576
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6996882945913719061, guid: fac975a9366e10b49a80e9501fa4cf6c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6996882945913719061, guid: fac975a9366e10b49a80e9501fa4cf6c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70710784
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6996882945913719061, guid: fac975a9366e10b49a80e9501fa4cf6c,
         type: 3}
@@ -837,7 +837,7 @@ PrefabInstance:
     - target: {fileID: 6996882945913719061, guid: fac975a9366e10b49a80e9501fa4cf6c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90.00001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6996882945913719061, guid: fac975a9366e10b49a80e9501fa4cf6c,
         type: 3}
@@ -879,17 +879,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 51be8c50b08e4f9459bcbd9bc07abdd7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 51be8c50b08e4f9459bcbd9bc07abdd7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0.1705
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 51be8c50b08e4f9459bcbd9bc07abdd7,
         type: 3}
-      propertyPath: m_LocalRotation.x
+      propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 51be8c50b08e4f9459bcbd9bc07abdd7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 51be8c50b08e4f9459bcbd9bc07abdd7,
         type: 3}
@@ -904,7 +904,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 51be8c50b08e4f9459bcbd9bc07abdd7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 51be8c50b08e4f9459bcbd9bc07abdd7,
         type: 3}
@@ -914,7 +914,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 51be8c50b08e4f9459bcbd9bc07abdd7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 51be8c50b08e4f9459bcbd9bc07abdd7,
         type: 3}
@@ -934,12 +934,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 51be8c50b08e4f9459bcbd9bc07abdd7,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 51be8c50b08e4f9459bcbd9bc07abdd7,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 51be8c50b08e4f9459bcbd9bc07abdd7,
         type: 3}

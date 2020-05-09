@@ -69,6 +69,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ef5658ffd81dca4faf2561efcc0d7c5, type: 3}
+--- !u!23 &3914546002804585085 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2757046760806059222, guid: 8ef5658ffd81dca4faf2561efcc0d7c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1157915153911201451}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &9045283669872150710 stripped
 MeshCollider:
   m_CorrespondingSourceObject: {fileID: 7896763018878662173, guid: 8ef5658ffd81dca4faf2561efcc0d7c5,
@@ -152,6 +158,11 @@ PrefabInstance:
       propertyPath: m_grabPoints.Array.data[0]
       value: 
       objectReference: {fileID: 9045283669872150710}
+    - target: {fileID: 3077697945769913809, guid: 42e85e66f0141684b8ec407e3ea14f11,
+        type: 3}
+      propertyPath: m_renderer
+      value: 
+      objectReference: {fileID: 3914546002804585085}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42e85e66f0141684b8ec407e3ea14f11, type: 3}
 --- !u!4 &331494433024903079 stripped

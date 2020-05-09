@@ -24,18 +24,7 @@ namespace Util
         [Tooltip("Event fired when the activator is deactivated")]
         public UnityEvent onDeactivated;
 
-        private bool isModeHandled;
-
-        public void Update()
-        {
-            if (isModeHandled)
-            {
-                return;
-            }
-
-            HandleMode();
-            isModeHandled = true;
-        }
+        private bool modeHandled;
 
         public void Activate()
         {
@@ -49,7 +38,7 @@ namespace Util
             isActive = false;
         }
 
-        private void HandleMode()
+        private void UpdateModel()
         {
             switch (mode)
             {
@@ -62,6 +51,22 @@ namespace Util
                     Deactivate();
                     break;
             }
+        }
+
+        private void OnDisable()
+        {
+            Deactivate();
+        }
+
+        private void Update()
+        {
+            if (modeHandled)
+            {
+                return;
+            }
+
+            UpdateModel();
+            modeHandled = true;
         }
     }
 }

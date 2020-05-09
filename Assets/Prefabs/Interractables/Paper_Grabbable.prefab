@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allowInventory: 1
   m_allowOffhandGrab: 1
   m_snapPosition: 0
   m_snapOrientation: 0

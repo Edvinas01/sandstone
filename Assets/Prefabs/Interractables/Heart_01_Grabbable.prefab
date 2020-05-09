@@ -69,6 +69,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3168257a75a8e84380a8aaf2af1b8ce, type: 3}
+--- !u!23 &5016684121743142210 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7868270884850778484, guid: b3168257a75a8e84380a8aaf2af1b8ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 2931668601687764022}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1029873966549768073 stripped
 MeshCollider:
   m_CorrespondingSourceObject: {fileID: 2802850736329522111, guid: b3168257a75a8e84380a8aaf2af1b8ce,
@@ -85,7 +91,12 @@ PrefabInstance:
     - target: {fileID: 2135611490740989344, guid: 42e85e66f0141684b8ec407e3ea14f11,
         type: 3}
       propertyPath: minPitch
-      value: 0.8
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2135611490740989344, guid: 42e85e66f0141684b8ec407e3ea14f11,
+        type: 3}
+      propertyPath: minVolumeScale
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2135611490740989345, guid: 42e85e66f0141684b8ec407e3ea14f11,
         type: 3}
@@ -167,6 +178,11 @@ PrefabInstance:
       propertyPath: m_grabPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1029873966549768073}
+    - target: {fileID: 3077697945769913809, guid: 42e85e66f0141684b8ec407e3ea14f11,
+        type: 3}
+      propertyPath: m_renderer
+      value: 
+      objectReference: {fileID: 5016684121743142210}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42e85e66f0141684b8ec407e3ea14f11, type: 3}
 --- !u!4 &3822525128523605253 stripped

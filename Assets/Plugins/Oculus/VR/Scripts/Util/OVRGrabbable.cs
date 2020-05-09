@@ -22,6 +22,9 @@ using UnityEngine;
 /// </summary>
 public class OVRGrabbable : MonoBehaviour
 {
+    [Tooltip("Can this grabbable be stored in inventory")]
+    public bool allowInventory;
+    
     [SerializeField]
     protected bool m_allowOffhandGrab = true;
     [SerializeField]
@@ -153,12 +156,16 @@ public class OVRGrabbable : MonoBehaviour
         m_grabbedKinematic = GetComponent<Rigidbody>().isKinematic;
     }
 
-    void OnDestroy()
+    private void OnDisable()
     {
         if (m_grabbedBy != null)
         {
-            // Notify the hand to release destroyed grabbables
             m_grabbedBy.ForceRelease(this);
         }
+    }
+
+    private void OnDestroy()
+    {
+        OnDisable();
     }
 }
