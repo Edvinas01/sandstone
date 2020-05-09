@@ -46,16 +46,13 @@ namespace Util
         /// <summary>
         /// Store grabbable to an available slot.
         /// </summary>
-        public bool Snap(OVRGrabbable grabbable)
+        public void Snap(OVRGrabbable grabbable)
         {
             var emptySlot = GetEmptySlot();
             if (emptySlot != null)
             {
                 Snap(emptySlot, grabbable);
-                return true;
             }
-
-            return false;
         }
 
         private void Snap(Slot slot, OVRGrabbable grabbable)
