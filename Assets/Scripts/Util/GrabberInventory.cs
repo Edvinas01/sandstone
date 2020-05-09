@@ -33,10 +33,10 @@ namespace Util
 
         private static void Release(InventorySlot slot)
         {
-            var grabbable = slot.Grabbable;
-            grabbable.transform.localScale = slot.OriginalScale;
-            grabbable.transform.parent = null;
-            grabbable.gameObject.SetActive(true);
+            var grabbableTransform = slot.Grabbable.transform;
+            grabbableTransform.localScale = slot.OriginalScale;
+            grabbableTransform.parent = null;
+            grabbableTransform.gameObject.SetActive(true);
 
             slot.OriginalScale = Vector3.zero;
             slot.Grabbable = null;
