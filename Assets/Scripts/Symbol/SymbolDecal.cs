@@ -1,18 +1,25 @@
-﻿using UnityEngine;
-using Util;
+﻿using TMPro;
+using UnityEngine;
 
 namespace Symbol
 {
-    [RequireComponent(typeof(MaterialColorSwitcher))]
-    [RequireComponent(typeof(MeshFilter))]
     [RequireComponent(typeof(Collider))]
     public class SymbolDecal : MonoBehaviour
     {
-        [TextArea(5, 10)] [Tooltip("The text that has been encoded in this decal")]
+        private static readonly int FaceColor = Shader.PropertyToID("_FaceColor");
+
+        [Tooltip("Text assigned to this decal")]
+        public TMP_Text tmpText;
+
+        [ColorUsage(true, true)]
+        [Tooltip("Color used to highlight the text")]
+        public Color highlightColor;
+
+        [TextArea(5, 10)]
+        [Tooltip("The text that has been encoded in this decal")]
         public string text;
 
-        [Tooltip("Color switcher of the symbol")]
-        public MaterialColorSwitcher materialColorSwitcher;
+        private Color originalColor;
 
         /// <summary>
         /// Is this symbol currently highlighted
@@ -24,7 +31,12 @@ namespace Symbol
         /// </summary>
         public void ClearHighlight()
         {
-            materialColorSwitcher.ResetColor();
+            if (tmpText != null)
+            {
+                tmpText.fontMaterial.SetColor(FaceColor, Color.black);
+            }
+
+            SetFontColor(originalColor);
             Highlighted = false;
         }
 
@@ -33,8 +45,18 @@ namespace Symbol
         /// </summary>
         public void Highlight()
         {
-            materialColorSwitcher.SwitchColor();
+            SetFontColor(highlightColor);
             Highlighted = true;
+        }
+
+        private void SetFontColor(Color color)
+        {
+            tmpText.fontMaterial.SetColor(FaceColor, color);
+        }
+
+        private void Awake()
+        {
+            originalColor = tmpText.fontMaterial.GetColor(FaceColor);
         }
     }
 }
