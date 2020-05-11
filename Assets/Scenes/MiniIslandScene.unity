@@ -4300,7 +4300,7 @@ Transform:
   - {fileID: 1656331467}
   - {fileID: 178478710}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &571090842
 PrefabInstance:
@@ -4988,7 +4988,7 @@ Transform:
   - {fileID: 1052463098}
   - {fileID: 1931900995}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &668111666
 PrefabInstance:
@@ -5543,7 +5543,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2014222249}
   m_Father: {fileID: 569918379}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8856,7 +8857,7 @@ Transform:
   - {fileID: 2033726194}
   - {fileID: 571090843}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1158962229
 PrefabInstance:
@@ -9064,7 +9065,7 @@ Transform:
   - {fileID: 390872992}
   - {fileID: 1527173815}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1168575592
 PrefabInstance:
@@ -15299,7 +15300,7 @@ Transform:
   - {fileID: 1544804882}
   - {fileID: 362300096}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1866890436 stripped
 Transform:
@@ -16267,7 +16268,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 719803767}
     m_Modifications:
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
@@ -16307,7 +16308,7 @@ PrefabInstance:
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
@@ -16342,7 +16343,7 @@ PrefabInstance:
     - target: {fileID: 3010590406036589836, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_Name
-      value: Symbol_Dynamic
+      value: Symbol
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406226701909, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
@@ -16366,6 +16367,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c3ff4dfdc4ecc46874abb557b2fd10, type: 3}
+--- !u!4 &2014222249 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
+    type: 3}
+  m_PrefabInstance: {fileID: 2014222248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2026628077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16672,7 +16679,7 @@ Transform:
   - {fileID: 1333524600}
   - {fileID: 1034759819}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2051160757
 PrefabInstance:
@@ -16819,7 +16826,7 @@ Transform:
   - {fileID: 2107008107}
   - {fileID: 1552030283}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &2061553852
 Mesh:

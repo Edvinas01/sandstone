@@ -400,6 +400,11 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8341046807323561759, guid: c24366b5328a855449c72c4df34f3e0f,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9030060879039013624, guid: c24366b5328a855449c72c4df34f3e0f,
         type: 3}
       propertyPath: onActivated.m_PersistentCalls.m_Calls.Array.size

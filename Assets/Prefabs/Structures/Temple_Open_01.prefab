@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &832210894396389175
+--- !u!1 &1991997594487668619
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4940543187468619617}
+  - component: {fileID: 5222829537947005068}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -16,18 +16,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4940543187468619617
+--- !u!4 &5222829537947005068
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832210894396389175}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.377357, y: -1.8432832, z: -0.20104599}
+  m_GameObject: {fileID: 1991997594487668619}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7697516981723719893}
+  - {fileID: 5936927100440587881}
+  - {fileID: 5749533932405096451}
   m_Father: {fileID: 5542833739787442256}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62,7 +63,7 @@ Transform:
   m_Father: {fileID: 5542833739787442256}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4121912399989812259
+--- !u!1 &4565807067689833425
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,7 +71,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7697516981723719893}
+  - component: {fileID: 5749533932405096451}
   m_Layer: 0
   m_Name: Symbols
   m_TagString: Untagged
@@ -78,14 +79,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7697516981723719893
+--- !u!4 &5749533932405096451
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4121912399989812259}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 4565807067689833425}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -93,8 +94,8 @@ Transform:
   - {fileID: 6067480658596871118}
   - {fileID: 5685163094081757160}
   - {fileID: 914105943909962616}
-  m_Father: {fileID: 4940543187468619617}
-  m_RootOrder: 0
+  m_Father: {fileID: 5222829537947005068}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5456020507731757759
 GameObject:
@@ -197,8 +198,88 @@ Transform:
   - {fileID: 2860318247381074468}
   - {fileID: 5542833739438094920}
   - {fileID: 5522061962901326691}
-  - {fileID: 4940543187468619617}
+  - {fileID: 5222829537947005068}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6137598894971674202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2810433131307537600}
+  - component: {fileID: 6057165811275664355}
+  m_Layer: 0
+  m_Name: Light Probe Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2810433131307537600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6137598894971674202}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.17, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5936927100440587881}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6057165811275664355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6137598894971674202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce72b8e8fac84047a96f26f2b28d1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_volume:
+    m_origin: {x: -0.12321234, y: 0.40879774, z: 0.022480011}
+    m_size: {x: 8.670543, y: 3.0639048, z: 9.108963}
+  m_type: 1
+  m_densityFixed: {x: 1, y: 1, z: 1}
+  m_densityFloat: {x: 1, y: 1, z: 1}
+--- !u!1 &7354203119211198350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5936927100440587881}
+  m_Layer: 0
+  m_Name: LightProbes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5936927100440587881
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354203119211198350}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2810433131307537600}
+  m_Father: {fileID: 5222829537947005068}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7548753487280782360
@@ -1290,42 +1371,42 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 7697516981723719893}
+    m_TransformParent: {fileID: 5749533932405096451}
     m_Modifications:
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.717
+      value: 0.6603584
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.65
+      value: 9.806717
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.2
+      value: -0.001045227
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.004751368
+      value: 0.0047513684
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7070908
+      value: -0.70709085
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.004751368
+      value: 0.0047513684
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7070908
+      value: 0.70709085
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
@@ -1370,8 +1451,8 @@ PrefabInstance:
     - target: {fileID: 3010590406036589839, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: text
-      value: Egyptians believed that one's earthly journey was only part of an eternal
-        life, the ankh symbolizes both mortal existence and the afterlife
+      value: It was believed that one's earthly journey was only part of an eternal
+        life, the Ankh symbolizes both mortal existence and the afterlife
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406226701909, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
@@ -1870,15 +1951,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7723a9ed03d1b46933bbe1609470ee, type: 3}
---- !u!4 &5343066655412226363 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 489339004799217261, guid: 7c7723a9ed03d1b46933bbe1609470ee,
-    type: 3}
-  m_PrefabInstance: {fileID: 5542833738575538006}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8970390940896361256 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3499616746419657854, guid: 7c7723a9ed03d1b46933bbe1609470ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 5542833738575538006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5343066655412226363 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 489339004799217261, guid: 7c7723a9ed03d1b46933bbe1609470ee,
     type: 3}
   m_PrefabInstance: {fileID: 5542833738575538006}
   m_PrefabAsset: {fileID: 0}
@@ -1922,12 +2003,12 @@ PrefabInstance:
     - target: {fileID: 7768563702975471481, guid: 503a801740a2da547ae4124fbc06a8d6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.8999996
+      value: -4.012
       objectReference: {fileID: 0}
     - target: {fileID: 7768563702975471481, guid: 503a801740a2da547ae4124fbc06a8d6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.099999905
+      value: -0.103
       objectReference: {fileID: 0}
     - target: {fileID: 7768563702975471481, guid: 503a801740a2da547ae4124fbc06a8d6,
         type: 3}
@@ -2097,22 +2178,22 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 7697516981723719893}
+    m_TransformParent: {fileID: 5749533932405096451}
     m_Modifications:
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.39
+      value: -0.012641907
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.66
+      value: 9.816717
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.874
+      value: 0.67295456
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
@@ -2177,7 +2258,7 @@ PrefabInstance:
     - target: {fileID: 3010590406036589839, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: text
-      value: The ancient Egyptians' attitude towards death was influenced by their
+      value: The ancient Egyptians attitude towards death was influenced by their
         belief in immortality
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406226701909, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
@@ -2358,22 +2439,22 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 7697516981723719893}
+    m_TransformParent: {fileID: 5749533932405096451}
     m_Modifications:
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.04
+      value: -0.66264343
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.69
+      value: 9.846716
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.2
+      value: -0.001045227
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
@@ -2678,22 +2759,22 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 7697516981723719893}
+    m_TransformParent: {fileID: 5749533932405096451}
     m_Modifications:
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.39
+      value: -0.012641907
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.68
+      value: 9.836718
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.48
+      value: -0.68104553
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
@@ -2703,12 +2784,12 @@ PrefabInstance:
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406036589833, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
@@ -2758,8 +2839,8 @@ PrefabInstance:
     - target: {fileID: 3010590406036589839, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}
       propertyPath: text
-      value: They regarded death as a temporary interruption, rather than the cessation
-        of life
+      value: Egyptians regarded death as a temporary interruption, rather than the
+        cessation of life
       objectReference: {fileID: 0}
     - target: {fileID: 3010590406226701909, guid: e6c3ff4dfdc4ecc46874abb557b2fd10,
         type: 3}

@@ -6,8 +6,8 @@
 VR exploration game set in an Ancient Egyptian like, sci-fi environment.
 
 ## Requirements
-- Oculus VR headset
-- Oculus APP
+- Oculus Rift or Rift S VR headset
+- Oculus App
 - Unity 2019.3.x
 
 ## Recommended

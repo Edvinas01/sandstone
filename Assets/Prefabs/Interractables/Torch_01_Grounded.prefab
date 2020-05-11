@@ -70,17 +70,17 @@ PrefabInstance:
     - target: {fileID: 7893656000648366061, guid: 31344e8b7f69b7742b23bfc8050fd4f5,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 14.8
+      value: 13.024
       objectReference: {fileID: 0}
     - target: {fileID: 7893656000648366061, guid: 31344e8b7f69b7742b23bfc8050fd4f5,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 7.2000003
+      value: 6.3360004
       objectReference: {fileID: 0}
     - target: {fileID: 7893656000648366061, guid: 31344e8b7f69b7742b23bfc8050fd4f5,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 14.8
+      value: 13.024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31344e8b7f69b7742b23bfc8050fd4f5, type: 3}
@@ -232,15 +232,35 @@ PrefabInstance:
       propertyPath: maxIntensity
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7114353684493718821, guid: c24366b5328a855449c72c4df34f3e0f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0351
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114353684493718821, guid: c24366b5328a855449c72c4df34f3e0f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 7379660582410101517, guid: c24366b5328a855449c72c4df34f3e0f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0713
+      value: 0.086
       objectReference: {fileID: 0}
     - target: {fileID: 8341046807323561759, guid: c24366b5328a855449c72c4df34f3e0f,
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8341046807323561759, guid: c24366b5328a855449c72c4df34f3e0f,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8341046807323561759, guid: c24366b5328a855449c72c4df34f3e0f,
+        type: 3}
+      propertyPath: MinDistance
+      value: 1.4053125
       objectReference: {fileID: 0}
     - target: {fileID: 9030060879039013624, guid: c24366b5328a855449c72c4df34f3e0f,
         type: 3}
