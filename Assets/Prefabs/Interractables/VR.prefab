@@ -1134,6 +1134,14 @@ PrefabInstance:
       propertyPath: Acceleration
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: GravityModifier
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: enableSprint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11462408, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1322,6 +1330,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_grabObjectsInLayer
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 137142317624947270, guid: 6fae51a9f4170334e8639e8dbfc0a54b,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fae51a9f4170334e8639e8dbfc0a54b, type: 3}
@@ -1690,6 +1703,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_grabObjectsInLayer
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 137261661946083092, guid: 0242aa8515b4bc947a945a5c6df83ee9,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0242aa8515b4bc947a945a5c6df83ee9, type: 3}

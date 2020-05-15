@@ -135,6 +135,9 @@ public class OVRPlayerController : MonoBehaviour
     [Tooltip("Is sprinting enabled")]
     public bool enableSprint;
 
+    [Tooltip("Increase in speed when sprinting")]
+    public float sprintMultiplier = 2f;
+    
 	protected CharacterController Controller = null;
 	protected OVRCameraRig CameraRig = null;
 
@@ -382,7 +385,10 @@ public class OVRPlayerController : MonoBehaviour
 #if !UNITY_ANDROID // LeftTrigger not avail on Android game pad
             if (enableSprint)
             {
-                moveInfluence *= 1.0f + OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
+                if (OVRInput.Get(OVRInput.Button.PrimaryThumbstick))
+                {
+                    moveInfluence *= sprintMultiplier;   
+                }
             }
 #endif
 
