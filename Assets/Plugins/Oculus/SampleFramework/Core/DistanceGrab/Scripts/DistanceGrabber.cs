@@ -376,7 +376,7 @@ namespace OculusSampleFramework
       {
           m_movingObjectToHand = moving;
 
-          if (!m_movingObjectToHand && m_parentTransform && IsMoveGrabbedObject())
+          if (!m_movingObjectToHand && m_parentHeldObject && IsMoveGrabbedObject())
           {
               m_grabbedObj.transform.parent = transform;
           }
