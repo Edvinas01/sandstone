@@ -3,7 +3,7 @@
 </p>
 
 # Sandstone
-VR exploration game set in an Ancient Egyptian like, sci-fi environment. Download the latest release [here](https://github.com/Edvinas01/sandstone/releases/tag/0.3).
+VR exploration game set in an Ancient Egyptian like, sci-fi environment. Download the latest release [here](https://github.com/Edvinas01/sandstone/releases/latest).
 
 ## Requirements
 - Oculus Rift or Rift S VR headset
